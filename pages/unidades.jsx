@@ -102,7 +102,7 @@ export default function Encontrar() {
         <meta name="description" key="description" content="AF Energy" />
         <meta
           name="keywords"
-          content="af crédito, af crédito franquia, franquia de crédito, franquia home office, franquia financeira home office, af credito franqueado, af crédito faturamento, af crédito valor de investimento, af crédito soluções financeiras, franquia crédito consignado home office, franquia mini agência bancária, franquia financeira barata, franquia financeira retorno"
+          content="af energy, energia solar"
         />
         <meta property="og:title" key="og:title" content="AF Energy" />
         <meta

@@ -9,11 +9,11 @@ import GlobalStyle from "../styles/global";
 import TagManager from "react-gtm-module";
 
 export default class MyApp extends App {
-  componentDidMount() {
-    TagManager.initialize({
-      gtmId: "GTM-5VLWHR5",
-    });
-  }
+  // componentDidMount() {
+  //   TagManager.initialize({
+  //     gtmId: "GTM-5VLWHR5",
+  //   });
+  // }
   render() {
     const { Component, pageProps } = this.props;
     return (
