@@ -172,7 +172,6 @@ const NavbarHome = () => {
               <MenuItem nome="Home" link="/" />
               <MenuItem nome="Sobre" link="/sobre" />
               <MenuItem nome="Serviços" link="/servicos" />
-              <MenuItem nome="Parceiros" link="/parceiros" />
               <MenuItem nome="Blog" link="/blog" />
               <MenuItem nome="Encontrar Unidade" link="/unidades" />
               <MenuItem nome="Contato" link="/contato" />

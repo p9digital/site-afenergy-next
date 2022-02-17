@@ -127,7 +127,7 @@ export default function Contato() {
                 </Paragraph>
                 <Paragraph>Fone: (17) 3212 5929</Paragraph>
                 <Paragraph>contato@afcredito.com.br</Paragraph>
-                <ButtonWrapperContato>
+                {/* <ButtonWrapperContato>
                   <AnchorContato
                     fontHoverColor="branco"
                     href="http://franquiadecreditos.com.br/"
@@ -140,7 +140,7 @@ export default function Contato() {
                       <br /> AF CRÉDITO
                     </span>
                   </AnchorContato>
-                </ButtonWrapperContato>
+                </ButtonWrapperContato> */}
                 <ButtonWrapperContato>
                   <Link href="/" passHref>
                     <ButtonHome
@@ -148,7 +148,7 @@ export default function Contato() {
                       backHoverColor="buttonSecundario"
                       fontHoverColor="buttonPrimario"
                     >
-                      Fazer uma simulação
+                      Faça um Orçamento!
                     </ButtonHome>
                   </Link>
                 </ButtonWrapperContato>

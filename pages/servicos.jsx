@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import Container from "../components/ui/containers/Container";
 import Paragraph from "../components/ui/tipografia/Paragraph";
+import Title from "../components/ui/tipografia/Title";
 import Banner from "../components/layout/Banner";
 import { ButtonWrapper, ButtonHome } from "../components/conteudo/home/Faixa1";
 
@@ -13,6 +14,18 @@ const FaixaConteudo = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 4rem 0;
+  @media (max-width: 1110px) {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  ${ButtonWrapper} {
+    margin: 5rem 0 0;
+    @media (max-width: 1110px) {
+    margin: 5rem auto;
+    }
+  }
 `;
 
 const FaixaTextos = styled.div`
@@ -124,6 +137,19 @@ export const Servico = styled.div`
   }
 `;
 
+const PaineisWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  @media (max-width: 1110px) {
+    justify-content: center;
+  }
+  img {
+    width: 100%;
+    max-width: 250px;
+  }
+`;
+
 export default function Servicos({ servicos }) {
   return (
     <>
@@ -147,48 +173,32 @@ export default function Servicos({ servicos }) {
       <Container>
         <FaixaConteudo>
           <FaixaTextos>
-            <ServicosWrapper>
-              {servicos.map((item, index) => {
-                return (
-                  <Link href={`/servicos/${item.path}`} key={index}>
-                    <Servico
-                      background={`/static/images/servicos/thumb-${item.path_thumb}.png`}
-                      key={index}
-                    >
-                      <Tag>
-                        <img
-                          src={`/static/images/servicos/${item.path_thumb}.png`}
-                          alt="Consórcio"
-                          className="default"
-                        />
-                        <img
-                          src={`/static/images/servicos/${item.path_thumb}_branco.png`}
-                          alt="Consórcio"
-                          className="hover"
-                        />
-                      </Tag>
-                      <h2>{item.nome}</h2>
-                      <ServicoConteudo>
-                        <Paragraph margem="0 0 2rem 0">{item.resumo}</Paragraph>
-                        <a>Saiba mais</a>
-                      </ServicoConteudo>
-                      <Seta src="/static/images/servicos/seta_esquerda.png" />
-                    </Servico>
-                  </Link>
-                );
-              })}
-            </ServicosWrapper>
-            <ButtonWrapper style={{ margin: "0 auto 5rem" }}>
+            <Title>INSTALAÇÃO DE PAINÉIS SOLARES EM IMÓVEIS</Title>
+            <Paragraph>COM GARANTIA E SUPORTE PÓS-INSTALAÇÃO</Paragraph>
+
+            <ButtonWrapper>
               <Link href="/unidades">
                 <ButtonHome
                   backColor="buttonPrimario"
                   backHoverColor="buttonSecundario"
                   fontHoverColor="buttonPrimario"
                 >
-                  Fazer uma simulação
+                  Faça um Orçamento!
                 </ButtonHome>
               </Link>
             </ButtonWrapper>
+          </FaixaTextos>
+          <FaixaTextos>
+            <PaineisWrapper>
+              <img
+                src="/static/images/servicos/paineis0.png"
+                alt="painéis solares"
+              />
+              <img
+                src="/static/images/servicos/paineis1.png"
+                alt="painéis solares"
+              />
+            </PaineisWrapper>
           </FaixaTextos>
         </FaixaConteudo>
       </Container>

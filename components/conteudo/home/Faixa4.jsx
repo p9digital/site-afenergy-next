@@ -9,9 +9,9 @@ import {
   ButtonHome,
 } from "./Faixa1";
 
-import { vantagens2 } from "../../../helpers/dados";
+import { servicos } from "../../../helpers/dados";
 
-const VantagemWrapper = styled.div`
+const ServicosWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@ const VantagemWrapper = styled.div`
   }
 `;
 
-const Vantagem = styled.div`
+const Servico = styled.div`
   background: url(${(props) => props.background}) no-repeat center;
   background-size: cover;
   background-color: ${(props) => props.theme.client.colors.branco};
@@ -74,11 +74,11 @@ const Faixa4 = () => {
     <FaixaWrapperSimples>
       <Container>
         <FaixaTextos>
-          <VantagemWrapper>
-            {vantagens2.map((item, index) => {
+          <ServicosWrapper>
+            {servicos.map((item, index) => {
               return (
-                <Link href="/" key={"vantagens2" + index}>
-                  <Vantagem
+                <Link href="/" key={"servicos" + index}>
+                  <Servico
                     background={`/static/images/home/card${index % 2}.png `}
                   >
                     <h2>{item.title}:</h2>
@@ -91,11 +91,11 @@ const Faixa4 = () => {
                       className="up"
                       src={`/static/images/home/icones/up_arrow.png`}
                     />
-                  </Vantagem>
+                  </Servico>
                 </Link>
               );
             })}
-          </VantagemWrapper>
+          </ServicosWrapper>
           <ButtonWrapper style={{ margin: "0 auto" }}>
             <Link href="/">
               <ButtonHome

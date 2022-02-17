@@ -13,7 +13,7 @@ export const vantagens = [
   "Energia limpa de forma sustentável e eficiente",
 ];
 
-export const vantagens2 = [
+export const servicos = [
   {
     title: "CONFIANÇA",
     text: "Mantêm o fornecimento de energia, mesmo com a interrupção pela distribuidora de energia ou falta de energia na rede",
@@ -30,15 +30,6 @@ export const vantagens2 = [
     title: "ECONOMIA",
     text: "Redução da conta de energia de até 95%, sem taxas, sem reajustes regulatórios e sem custos adicionais",
   },
-];
-
-export const servicos = [
-  "Soluções de crédito",
-  "Consórcios",
-  "Seguros",
-  "Soluções para veículos",
-  "Soluções para imóveis",
-  "Energia Solar",
 ];
 
 export const simOuNao = ["Sim", "Não"];

@@ -111,9 +111,6 @@ const NavHeader = () => {
             </a>
           </RedesSociais>
           <SideDiv>
-            <a href="https://franquiadecreditos.com.br/" target="_blank">
-              SEJA UM FRANQUEADO
-            </a>
           </SideDiv>
         </FaixaConteudo>
       </Container>

@@ -154,35 +154,37 @@ export default function Sobre() {
       </Head>
       <Banner background="/static/images/sobre/background.png">
         Conheça a <br />
-        AF Crédito
+        AF Energy
       </Banner>
       <Container>
         <FaixaConteudo>
           <FaixaTextos>
             <Paragraph margem="0 0 2rem 0">
-              <strong>História da Empresa</strong>
+              <strong>A AF ENERGY FAZ PARTE DA AF 360!</strong>
             </Paragraph>
             <Paragraph margem="0 0 2rem 0">
-              A <strong>AF Crédito</strong> presta assesoria financeira,
-              disponibilizando soluções como crédito consignado e diversos tipos
-              de consórcio que possibilitam organizar e alavancar as finanças e
-              promover conquistas. Através de valores como ética, transparência
-              e competência, buscamos ampliar nossa atuação no mercado e nos
-              tornamos referência nacional, por meio da excelência no
-              atendimento e nos serviços prestados.
+              A AF 360 é uma holding de franquias e serviços de assessoria
+              financeira, disponibilizando soluções como seguros, crédito
+              consignado e diversos tipos de consórcio que possibilitam
+              organizar e alavancar as finanças e promover conquistas. Através
+              de valores como ética, transparência e competência, buscamos
+              ampliar nossa atuação no mercado e nos tornamos referência
+              nacional, por meio da excelência no atendimento e nos serviços
+              prestados.
             </Paragraph>
             <Paragraph margem="0 0 2rem 0">
-              Nossa história está atrelada ao know-how de nosso fundador,{" "}
-              <strong>Fabio Donizete da Silva</strong>, que vislumbrou no
-              segmento a oportunidade de atender uma demanda existente dentro do
-              mercado de franquias, proporcionando inúmeras realizações aos
-              clientes, através de seu menu de serviços.
+              Nossa história está atrelada ao know-how de nosso fundador, Fabio
+              Donizete da Silva, que vislumbrou no segmento a oportunidade de
+              atender uma demanda existente dentro do mercado de franquias,
+              proporcionando inúmeras realizações aos clientes, através de seu
+              menu de serviços.
             </Paragraph>
             <Paragraph margem="0 0 2rem 0">
-              Através de seu sistema de franquias, a AF Crédito apresenta
-              ferramentas que viabilizam aos franqueados obter desempenho
-              comercial, operacional e financeiro de excelência, realizando assim
-              parcerias que construirão uma história de sucesso.
+              Através de seu sistema de franquias e serviços, a AF 360 apresenta
+              ferramentas que viabilizam desempenho comercial, operacional e
+              financeiro de excelência, além de inúmeras facilidades,
+              realizando, assim, parcerias que construirão uma história de
+              sucesso.
             </Paragraph>
           </FaixaTextos>
           <FaixaTextos style={{ maxWidth: "500px" }}>
@@ -190,7 +192,7 @@ export default function Sobre() {
               return (
                 <ServicoWrapper key={index}>
                   <Servico>
-                    <p>{item}</p>
+                    <p>{item.title}</p>
                     <p>100%</p>
                   </Servico>
                 </ServicoWrapper>
@@ -198,58 +200,7 @@ export default function Sobre() {
             })}
           </FaixaTextos>
         </FaixaConteudo>
-        <FaixaConteudo>
-          <BigNumbers>
-            <Number>
-              <h1>{clientes}</h1>
-              <h2>Clientes</h2>
-            </Number>
-            <Number>
-              <h1>{anos}</h1>
-              <h2>
-                Anos de
-                <br />
-                Atividade
-              </h2>
-            </Number>
-            <Number>
-              <h1>{franquias}</h1>
-              <h2>
-                Franquias
-                <br />
-                Operacionais
-              </h2>
-            </Number>
-          </BigNumbers>
-        </FaixaConteudo>
-        <FaixaConteudo>
-          <ValoresWrapper>
-            <Valor>
-              <h1>Ética</h1>
-              <p>
-                Através dos nossos valores buscamos ampliar nossa atuação no
-                mercado e nos tornarmos referência nacional, por meio da
-                excelência no atendimento e nos serviços prestados.
-              </p>
-            </Valor>
-            <Valor>
-              <h1>Transparência</h1>
-              <p>
-                Nossa missão é gerar grandes resultados, dentro da ética e
-                legalidade, atendendo às expectativas de nosso clientes,
-                colaboradores, fornecedores e acionistas.
-              </p>
-            </Valor>
-            <Valor>
-              <h1>Competência</h1>
-              <p>
-                Nosso objetivo é oferecer segurança e credibilidade ao atender
-                as necessidades de nossos clientes, para isso contamos com os
-                mais variados produtos e profissionais altamente capacitados.
-              </p>
-            </Valor>
-          </ValoresWrapper>
-        </FaixaConteudo>
+
         <ButtonWrapper style={{ margin: "0 auto 5rem" }}>
           <Link href="/" passHref>
             <ButtonHome
@@ -257,7 +208,7 @@ export default function Sobre() {
               backHoverColor="buttonSecundario"
               fontHoverColor="buttonPrimario"
             >
-              Fazer uma simulação
+              CONHEÇA O SISTEMA SOLAR AF ENERGY
             </ButtonHome>
           </Link>
         </ButtonWrapper>

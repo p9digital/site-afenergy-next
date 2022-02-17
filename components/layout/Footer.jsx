@@ -154,7 +154,7 @@ const Footer = () => {
                     fontColor="azul"
                     fontHoverColor="branco"
                   >
-                    Fazer uma Simulação
+                    Faça um Orçamento!
                   </AnchorFooter>
                 </Link>
               </LinkWrapper>
@@ -190,11 +190,11 @@ const Footer = () => {
               <Link href="/unidades" passHref>
                 <FooterLink>ENCONTRAR UNIDADE</FooterLink>
               </Link>
-              <FooterLink>
+              {/* <FooterLink>
                 <a href="https://franquiadecreditos.com.br/" target="_blank">
                   SEJA UM FRANQUEADO
                 </a>
-              </FooterLink>
+              </FooterLink> */}
               <InfosWrapper>
                 <p>Termos e condições</p>
                 <p>Copyright AF Crédito Ldta.</p>
