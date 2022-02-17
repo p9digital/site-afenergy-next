@@ -10,11 +10,11 @@ export default function Home({ servicos, posts }) {
   return (
     <>
       <Head>
-        <title>AF Crédito</title>
+        <title>AF Energy</title>
         <meta
           name="description"
           key="description"
-          content="AF Crédito"
+          content="AF Energy"
         />
         <meta
           name="keywords"
@@ -23,12 +23,12 @@ export default function Home({ servicos, posts }) {
         <meta
           property="og:title"
           key="og:title"
-          content="AF Crédito"
+          content="AF Energy"
         />
         <meta
           property="og:description"
           key="og:description"
-          content="AF Crédito"
+          content="AF Energy"
         />
       </Head>
       <Faixa1 servicos={servicos} />

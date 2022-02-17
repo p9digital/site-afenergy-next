@@ -331,21 +331,21 @@ export default function Unidade({
   return (
     <>
       <Head>
-        <title>AF Crédito</title>
-        <meta name="description" key="description" content="AF Crédito" />
+        <title>AF Energy</title>
+        <meta name="description" key="description" content="AF Energy" />
         <meta
           name="keywords"
           content="af crédito, af crédito franquia, franquia de crédito, franquia home office, franquia financeira home office, af credito franqueado, af crédito faturamento, af crédito valor de investimento, af crédito soluções financeiras, franquia crédito consignado home office, franquia mini agência bancária, franquia financeira barata, franquia financeira retorno"
         />
-        <meta property="og:title" key="og:title" content="AF Crédito" />
+        <meta property="og:title" key="og:title" content="AF Energy" />
         <meta
           property="og:description"
           key="og:description"
-          content="AF Crédito"
+          content="AF Energy"
         />
       </Head>
       <Banner background="/static/images/unidades/background.png">
-        AF Crédito {currentUnidade.unidade_nome}
+        AF Energy {currentUnidade.unidade_nome}
       </Banner>
       <Container>
         <FaixaConteudo>
@@ -443,7 +443,7 @@ export default function Unidade({
                     tipo="svg"
                   />
                   <Paragraph margem="0 0 0 2rem">
-                    <strong>AF Crédito {currentUnidade.unidade_nome}</strong>
+                    <strong>AF Energy {currentUnidade.unidade_nome}</strong>
                     <br />
                     Endereço: {currentUnidade.endereco}
                     <br />
@@ -513,7 +513,7 @@ export default function Unidade({
               />
             </Coluna>
           </FaixaTextos>
-          <ServicosWrapper>
+          {/* <ServicosWrapper>
             {servicos.map((item, index) => {
               return (
                 <Link href={`/servicos/${item.path}`} key={index}>
@@ -543,7 +543,7 @@ export default function Unidade({
                 </Link>
               );
             })}
-          </ServicosWrapper>
+          </ServicosWrapper> */}
         </FaixaConteudo>
       </Container>
     </>

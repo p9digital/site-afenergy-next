@@ -137,11 +137,11 @@ const Footer = () => {
               <LogoContainer>
                 <Logo
                   src="/static/images/logo_branco.png"
-                  alt="Logo AFCrédito"
+                  alt="Logo AF Energy"
                 />
               </LogoContainer>
               <p>
-                A AF Crédito presta assessoria financeira, disponibilizando
+                A AF Energy presta assessoria financeira, disponibilizando
                 soluções como crédito consignado e diversos tipos de consórcio
                 que possibilitam organizar e alavancar as finanças e promover
                 conquistas.
@@ -197,7 +197,7 @@ const Footer = () => {
               </FooterLink> */}
               <InfosWrapper>
                 <p>Termos e condições</p>
-                <p>Copyright AF Crédito Ldta.</p>
+                <p>Copyright AF Energy Ldta.</p>
                 <p>CNPJ: 17.814.862/0001-50</p>
               </InfosWrapper>
               <RedesWrapper>

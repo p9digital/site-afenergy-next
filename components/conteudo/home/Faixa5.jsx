@@ -137,7 +137,7 @@ const Faixa5 = ({ posts }) => {
           </PostsWrapper>
 
           {/* <Paragraph>
-            Encontre a AF Crédito mais próxima de você e<br /> faça agora sua
+            Encontre a AF Energy mais próxima de você e<br /> faça agora sua
             simulação!
           </Paragraph>
           <ButtonWrapper>

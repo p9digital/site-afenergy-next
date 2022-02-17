@@ -165,7 +165,7 @@ const NavbarHome = () => {
           <Menu>
             <LogoContainer>
               <LogoLink href="/">
-                <Logo src="/static/images/logo.png" alt="Logo AFCrédito" />
+                <Logo src="/static/images/logo.png" alt="Logo AF Energy" />
               </LogoLink>
             </LogoContainer>
             <MenuLinks>

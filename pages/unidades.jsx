@@ -90,7 +90,7 @@ export default function Encontrar() {
       setUnidadesFiltradas(unidades);
       setStatus(false);
     } else {
-      setStatus("No momento não há unidades AF Crédito na sua cidade.");
+      setStatus("No momento não há unidades AF Energy na sua cidade.");
       setUnidadesFiltradas(false);
     }
   };
@@ -98,24 +98,24 @@ export default function Encontrar() {
   return (
     <>
       <Head>
-        <title>AF Crédito</title>
-        <meta name="description" key="description" content="AF Crédito" />
+        <title>AF Energy</title>
+        <meta name="description" key="description" content="AF Energy" />
         <meta
           name="keywords"
           content="af crédito, af crédito franquia, franquia de crédito, franquia home office, franquia financeira home office, af credito franqueado, af crédito faturamento, af crédito valor de investimento, af crédito soluções financeiras, franquia crédito consignado home office, franquia mini agência bancária, franquia financeira barata, franquia financeira retorno"
         />
-        <meta property="og:title" key="og:title" content="AF Crédito" />
+        <meta property="og:title" key="og:title" content="AF Energy" />
         <meta
           property="og:description"
           key="og:description"
-          content="AF Crédito"
+          content="AF Energy"
         />
       </Head>
       <Container>
         <FaixaConteudo>
           <FaixaTextos>
             <Paragraph margem="2rem 0 0">
-              <strong>Encontre a AF Crédito mais próxima de você!</strong>
+              <strong>Encontre a AF Energy mais próxima de você!</strong>
             </Paragraph>
             <FormWrapper>
               <FormularioEncontrar getUnidades={getUnidades} />
@@ -129,7 +129,7 @@ export default function Encontrar() {
                     <Link href={"/unidades/" + unidade.path} key={unidade.id}>
                       <Unidade>
                         <Paragraph margem="0 0 1rem 0" className="titulo">
-                          <strong>AF Crédito {unidade.bairro}</strong>
+                          <strong>AF Energy {unidade.bairro}</strong>
                         </Paragraph>
                         {!unidade.agendamento && (
                           <Paragraph margem=".5rem 0" className="implantacao">

@@ -104,7 +104,7 @@ export const parceiros = [
     img: "bradesco",
   },
   {
-    title: "Barigui Crédito Inteligente",
+    title: "Barigui Energy Inteligente",
     img: "barigui",
   },
   {
