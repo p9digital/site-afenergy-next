@@ -22,50 +22,12 @@ const FaixaWrapper5 = styled(FaixaWrapperSimples)`
   }
 `;
 
-const ServicosWrapper = styled.div`
-  background-image: url('/static/images/home/background_servicos.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  width: 100%;
-  max-width: 900px;
-  border-radius: 30px;
-
-  padding: 3rem;
-  margin-bottom: 4rem;
-
-  color: ${props => props.theme.client.colors.branco};
-  p {
-    color: ${props => props.theme.client.colors.branco};
-  }
-`;
-
-const ServicosParagraph = styled(Paragraph)`
-  margin-bottom: 20px;
-`;
-
-const ServicosContainer = styled.div``;
-
-const ServicoItem = styled.a`
-  display: inline-block;
-  margin: 0 2rem 2rem;
-
-  @media (max-width: 768px) {
-    margin: 0 0 2rem;
-  }
-`;
-
 const PostsWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 
-  margin: 4rem 0 10rem;
-
-  @media (max-width: 768px) {
-    margin: 4rem 0 5rem;
-  }
+  margin: 4rem 0 0;
 `;
 
 const Post = styled.div`
@@ -151,29 +113,6 @@ const Faixa5 = ({ posts }) => {
     <FaixaWrapper5>
       <Container>
         <FaixaTextos>
-          <ServicosWrapper>
-            <ServicosParagraph>
-              <strong>Conheça os nosso serviços complementares</strong>
-            </ServicosParagraph>
-            <ServicosContainer>
-              <Link href="/servicos/5">
-                <ServicoItem>
-                  <img
-                    src="/static/images/home/energia.png"
-                    alt="Energia solar"
-                  />
-                </ServicoItem>
-              </Link>
-              <Link href="/servicos/2">
-                <ServicoItem>
-                  <img
-                    src="/static/images/home/franquias.png"
-                    alt="Aquisição e revenda de franquias"
-                  />
-                </ServicoItem>
-              </Link>
-            </ServicosContainer>
-          </ServicosWrapper>
           <Paragraph>
             <strong>Informações Úteis</strong>
           </Paragraph>
@@ -197,7 +136,7 @@ const Faixa5 = ({ posts }) => {
             })}
           </PostsWrapper>
 
-          <Paragraph>
+          {/* <Paragraph>
             Encontre a AF Crédito mais próxima de você e<br /> faça agora sua
             simulação!
           </Paragraph>
@@ -210,7 +149,7 @@ const Faixa5 = ({ posts }) => {
                 Faça uma Simulação
               </ButtonHome>
             </Link>
-          </ButtonWrapper>
+          </ButtonWrapper> */}
         </FaixaTextos>
       </Container>
     </FaixaWrapper5>

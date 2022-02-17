@@ -13,7 +13,7 @@ const Faixa3Wrapper = styled(FaixaWrapperSimples)`
   background-size: cover;
   background-position: center;
 
-  padding: 5rem 0;
+  padding: 15rem 0;
   margin-bottom: 10rem;
 
   @media (max-width: 768px) {
@@ -62,9 +62,11 @@ const SideContainer = styled.div`
 `;
 
 const TextosWrapper = styled.div`
-  max-width: 400px;
+  max-width: 500px;
+  padding-right: 2rem;
 
   @media (max-width: 768px) {
+    padding: 0;
     max-width: 100%;
   }
 `;
@@ -73,7 +75,7 @@ const Vantagem = styled.div`
   margin-bottom: 4rem;
 
   img {
-    width: 5rem;
+    width: 3rem;
   }
 
   @media (max-width: 768px) {
@@ -84,10 +86,10 @@ const Vantagem = styled.div`
 `;
 
 const Legenda = styled.h2`
-  bottom: -150px;
+  bottom: -200px;
   color: #eaebef;
-  font-size: 4.8rem;
-  left: -350px;
+  font-size: 4.6rem;
+  left: -380px;
   line-height: 1.2;
   max-width: 250px;
   position: absolute;
@@ -104,28 +106,20 @@ const Legenda = styled.h2`
 const Faixa3 = () => {
   return (
     <Faixa3Wrapper>
-      <Faixa3WrapperBannerMobile />
+      {/* <Faixa3WrapperBannerMobile /> */}
       <FaixaConteudo>
         <SideContainer>
           <TextosWrapper>
-            <Title>
-              Adquira crédito com as condições mais vantajosas do mercado.
+            <Title margem="0 0 4rem 0">
+            VANTAGENS DOS SISTEMAS FOTOVOLTAICOS PARA GERAÇÃO DE ENERGIA:
             </Title>
-            <Paragraph margem="0 0 4rem 0">
-              Alavanque a sua vida financeira, quite suas dívidas ou conquiste
-              aquele sonho com nossas opções de aquisição de crédito:
-            </Paragraph>
             {vantagens.map((item, index) => {
               return (
                 <Vantagem key={index}>
                   <img
-                    src={`/static/images/icons/vantagem${index}.png`}
-                    alt={item.title}
+                    src={`/static/images/home/icones/vantagem${index}.png`}
                   />
-                  <Paragraph>
-                    <strong>{item.title}</strong>
-                  </Paragraph>
-                  <Paragraph>{item.description}</Paragraph>
+                  <Paragraph><strong>{item}</strong></Paragraph>
                 </Vantagem>
               );
             })}

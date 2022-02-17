@@ -1,42 +1,71 @@
-import styled, { keyframes } from 'styled-components';
-import Container from '../../ui/containers/Container';
-import Paragraph from '../../ui/tipografia/Paragraph';
+import styled, { keyframes } from "styled-components";
+import Container from "../../ui/containers/Container";
+import Link from "next/link";
 
-import FormularioEncontrarHome from '../../formulario/FormularioEncontrarHome';
-import Icon from '../../ui/icons/Icon';
-import { FaixaWrapperSimples, FaixaTextos } from './Faixa1';
+import {
+  FaixaWrapperSimples,
+  FaixaTextos,
+  ButtonWrapper,
+  ButtonHome,
+} from "./Faixa1";
 
-const LogosWrapper = styled.div`
+import { vantagens2 } from "../../../helpers/dados";
+
+const VantagemWrapper = styled.div`
   width: 100%;
-  margin: 5rem 0 5rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 5rem;
 
-  img {
-    height: 5rem;
-    width: auto;
-    margin: 2rem;
+  @media (max-width: 768px) {
+    margin-top: 5rem;
   }
 `;
 
-const FormWrapper = styled.div`
-  width: 100%;
+const Vantagem = styled.div`
+  background: url(${(props) => props.background}) no-repeat center;
+  background-size: cover;
+  background-color: ${(props) => props.theme.client.colors.branco};
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.09);
+  border-radius: 15px;
+  padding: 2rem 2rem 1rem;
+
+  width: 250px;
+  height: 250px;
+  text-align: left;
+  color: ${(props) => props.theme.client.colors.branco};
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 
-  margin: 3rem 0 5rem;
-`;
-
-const RedesWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
-  a {
-    margin: 0.5rem;
+  h2 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
   }
   p {
-    margin-right: 2rem;
+    font-size: 1.4rem;
+    flex: 1;
+  }
+  .right {
+    width: 35px;
+  }
+  .up {
+    display: none;
+    width: 15px;
+  }
+  &:hover {
+    cursor: pointer;
+    background: none;
+    color: ${(props) => props.theme.client.colors.azul};
+
+    .right {
+      display: none;
+    }
+    .up {
+      display: initial;
+    }
   }
 `;
 
@@ -45,47 +74,39 @@ const Faixa4 = () => {
     <FaixaWrapperSimples>
       <Container>
         <FaixaTextos>
-          <LogosWrapper>
-            <img src="/static/images/home/logos/itau.png" alt="Itaú" />
-            <img
-              src="/static/images/home/logos/caixa.png"
-              alt="Caixa Consórcios"
-            />
-            <img src="/static/images/home/logos/bradesco.png" alt="Bradesco" />
-            <img src="/static/images/home/logos/allianz.png" alt="Allianz" />
-            <img src="/static/images/home/logos/safra.png" alt="Safra" />
-            <img
-              src="/static/images/home/logos/santander.png"
-              alt="Santander"
-            />
-          </LogosWrapper>
-          <Paragraph>
-            <strong>Encontre a AF Crédito mais próxima de você!</strong>
-          </Paragraph>
-          <FormWrapper>
-            <FormularioEncontrarHome/>
-          </FormWrapper>
-          <RedesWrapper>
-            <Paragraph>Siga a AF Crédito nas Redes Sociais:</Paragraph>
-            <a href="https://www.facebook.com/afcredito.brasil" target="_blank">
-              <Icon
-                className="hover"
-                icon="facebook-square"
-                cor="#143562"
-                tamanho="4.5rem"
-                tipo="svg"
-              />
-            </a>
-            <a href="https://www.instagram.com/afcredito/" target="_blank">
-              <Icon
-                className="hover"
-                icon="instagram"
-                cor="#143562"
-                tamanho="4.5rem"
-                tipo="svg"
-              />
-            </a>
-          </RedesWrapper>
+          <VantagemWrapper>
+            {vantagens2.map((item, index) => {
+              return (
+                <Link href="/" key={"vantagens2" + index}>
+                  <Vantagem
+                    background={`/static/images/home/card${index % 2}.png `}
+                  >
+                    <h2>{item.title}:</h2>
+                    <p>{item.text}</p>
+                    <img
+                      className="right"
+                      src={`/static/images/home/icones/right_arrow.png`}
+                    />
+                    <img
+                      className="up"
+                      src={`/static/images/home/icones/up_arrow.png`}
+                    />
+                  </Vantagem>
+                </Link>
+              );
+            })}
+          </VantagemWrapper>
+          <ButtonWrapper style={{ margin: "0 auto" }}>
+            <Link href="/">
+              <ButtonHome
+                backColor="buttonPrimario"
+                backHoverColor="buttonSecundario"
+                fontHoverColor="buttonPrimario"
+              >
+                FAZER UM ORÇAMENTO
+              </ButtonHome>
+            </Link>
+          </ButtonWrapper>
         </FaixaTextos>
       </Container>
     </FaixaWrapperSimples>

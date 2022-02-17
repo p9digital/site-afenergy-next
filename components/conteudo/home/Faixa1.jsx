@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import Title from '../../ui/tipografia/Title';
-import FormularioHome from '../../formulario/FormularioHome';
-import Anchor from '../../ui/buttons/Anchor';
-import { useState, useEffect } from 'react';
+import styled from "styled-components";
+import Title from "../../ui/tipografia/Title";
+import FormularioHome from "../../formulario/FormularioHome";
+import Anchor from "../../ui/buttons/Anchor";
+import { useState, useEffect } from "react";
 
 export const FaixaTextos = styled.div`
   display: flex;
@@ -20,6 +20,13 @@ export const TextosWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+
+  &.title-form {
+    margin-left: 18rem;
+    @media (max-width: 1200px){
+      margin-left: 0;
+    }
   }
 `;
 
@@ -45,7 +52,7 @@ export const ButtonHome = styled(Anchor)`
 `;
 
 const Faixa1Wrapper = styled(FaixaWrapperSimples)`
-  background-image: url(${props => props.background});
+  background-image: url(${(props) => props.background});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -64,7 +71,7 @@ const Faixa1Wrapper = styled(FaixaWrapperSimples)`
 `;
 
 const BannerMobile = styled.div`
-  background-image: url(${props => props.background});
+  background-image: url(${(props) => props.background});
   background-size: cover;
   display: none;
   height: 50vw;
@@ -154,39 +161,37 @@ const Faixa1 = ({ servicos }) => {
   const [currentBanner, setCurrentBanner] = useState(1);
   const [currentMiniBanner, setCurrentMiniBanner] = useState(2);
 
-  setTimeout(() => {
-    if (currentBanner === 1 && currentMiniBanner === 2) {
-      setCurrentBanner(currentBanner + 1);
-      setCurrentMiniBanner(currentMiniBanner - 1);
-    } else if (currentBanner === 2 && currentMiniBanner === 1) {
-      setCurrentBanner(currentBanner - 1);
-      setCurrentMiniBanner(currentMiniBanner + 1);
-    }
-  }, 5000);
+  // setTimeout(() => {
+  //   if (currentBanner === 1 && currentMiniBanner === 2) {
+  //     setCurrentBanner(currentBanner + 1);
+  //     setCurrentMiniBanner(currentMiniBanner - 1);
+  //   } else if (currentBanner === 2 && currentMiniBanner === 1) {
+  //     setCurrentBanner(currentBanner - 1);
+  //     setCurrentMiniBanner(currentMiniBanner + 1);
+  //   }
+  // }, 5000);
 
   return (
     <Faixa1Wrapper
-      background={`/static/images/home/banner${currentBanner}.png`}
+      background={`/static/images/home/banner.png`}
     >
-      <BannerMobile background={`/static/images/home/banner1-mobile.png`}/>
+      <BannerMobile background={`/static/images/home/banner1-mobile.png`} />
       <ColTextos>
         <TextosContainer>
-          <TextosWrapper>
+          <TextosWrapper className="title-form">
             <BigTitle>
-              CRÉDITO SIMPLES,
-              <br />
-              <span>&emsp;</span>RÁPIDO E SEM
-              <br />
-              <span>&emsp;&emsp;</span>BUROCRACIA.
+              INSTALE PAINÉIS
+              <br /> SOLARES AF ENERGY
+              <br /> NO SEU IMÓVEL
             </BigTitle>
             <SubTitle>
-              <span>&emsp;&emsp;&emsp;&emsp;&emsp;</span>Faça uma simulação:
+              Solicite seu orçamento:
               <img src="/static/images/icons/arrow.png" alt="Seta para baixo" />
             </SubTitle>
           </TextosWrapper>
-          <MiniImagemBanner
+          {/* <MiniImagemBanner
             src={`/static/images/home/mini-banner${currentMiniBanner}.png`}
-          />
+          /> */}
         </TextosContainer>
         <TextosContainer>
           <FormWrapper>
