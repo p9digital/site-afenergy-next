@@ -158,13 +158,13 @@ const Footer = () => {
                   </AnchorFooter>
                 </Link>
               </LinkWrapper>
-              <picture>
+              {/* <picture>
                 <source
                   srcSet="/static/images/logo_abf.webp"
                   type="image/webp"
                 />
                 <LogoAbf src="/static/images/logo_abf.png" alt="Logo ABF" />
-              </picture>
+              </picture> */}
             </TextWrapper>
           </Coluna>
           <Coluna>
