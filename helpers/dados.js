@@ -4,6 +4,17 @@ export const beneficios = [
   "Sistema eficiente e confiável",
 ];
 
+export const beneficiosServicos = [
+  "Retorno do investimento em curto-médio prazo",
+  "Valorização imediata da propriedade (imóvel)",
+  "Redução da conta de energia elétrica",
+  "Baixo custo de manutenção e transformação",
+  "Utilização de materiais e equipamentos 100% recicláveis",
+  "25 anos de vida útil ",
+  "Energia limpa de forma sustentável e eficiente",
+  "Linhas de financiamento com taxas de juros abaixo do mercado",
+];
+
 export const vantagens = [
   "Valorização imediata da propriedade (imóvel)",
   "Redução da conta de energia elétrica",

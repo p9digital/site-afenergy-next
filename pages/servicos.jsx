@@ -3,18 +3,20 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useState } from "react";
 
+import FormularioAgendamento from "../components/formulario/FormularioAgendamento";
 import Container from "../components/ui/containers/Container";
 import Paragraph from "../components/ui/tipografia/Paragraph";
 import Title from "../components/ui/tipografia/Title";
 import Banner from "../components/layout/Banner";
 import { ButtonWrapper, ButtonHome } from "../components/conteudo/home/Faixa1";
+import { servicos, beneficiosServicos } from "../helpers/dados";
 
 const FaixaConteudo = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 4rem 0;
-  @media (max-width: 1110px) {
+  @media (max-width: 900px) {
     text-align: center;
     flex-direction: column;
     justify-content: center;
@@ -22,8 +24,8 @@ const FaixaConteudo = styled.div`
   }
   ${ButtonWrapper} {
     margin: 5rem 0 0;
-    @media (max-width: 1110px) {
-    margin: 5rem auto;
+    @media (max-width: 900px) {
+      margin: 5rem auto;
     }
   }
 `;
@@ -138,10 +140,11 @@ export const Servico = styled.div`
 `;
 
 const PaineisWrapper = styled.div`
+  margin: 5rem 0;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  @media (max-width: 1110px) {
+  @media (max-width: 900px) {
     justify-content: center;
   }
   img {
@@ -150,16 +153,22 @@ const PaineisWrapper = styled.div`
   }
 `;
 
-export default function Servicos({ servicos }) {
+const FormWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
+`;
+
+export default function Servicos() {
   return (
     <>
       <Head>
         <title>AF Energy</title>
         <meta name="description" key="description" content="AF Energy" />
-        <meta
-          name="keywords"
-          content="af energy, energia solar"
-        />
+        <meta name="keywords" content="af energy, energia solar" />
         <meta property="og:title" key="og:title" content="AF Energy" />
         <meta
           property="og:description"
@@ -173,11 +182,39 @@ export default function Servicos({ servicos }) {
       <Container>
         <FaixaConteudo>
           <FaixaTextos>
-            <Title>INSTALAÇÃO DE PAINÉIS SOLARES EM IMÓVEIS</Title>
-            <Paragraph>COM GARANTIA E SUPORTE PÓS-INSTALAÇÃO</Paragraph>
+            <Title margem="0 0 2rem">
+              INSTALAÇÃO DE PAINÉIS SOLARES EM IMÓVEIS
+            </Title>
 
+            {beneficiosServicos.map((item, index) => {
+              return (
+                <Paragraph
+                  key={"beneficiosServicos" + index}
+                  margem="0 0 .5rem"
+                >
+                  ● {item}
+                </Paragraph>
+              );
+            })}
+            <PaineisWrapper>
+              <img
+                src="/static/images/servicos/paineis0.png"
+                alt="painéis solares"
+              />
+              <img
+                src="/static/images/servicos/paineis1.png"
+                alt="painéis solares"
+              />
+            </PaineisWrapper>
+            {servicos.map((item, index) => {
+              return (
+                <Paragraph key={"servicos2" + index} margem="0 0 1rem">
+                  <strong>● {item.title}</strong>: {item.text}
+                </Paragraph>
+              );
+            })}
             <ButtonWrapper>
-              <Link href="/unidades">
+              <Link href="#form">
                 <ButtonHome
                   backColor="buttonPrimario"
                   backHoverColor="buttonSecundario"
@@ -189,16 +226,9 @@ export default function Servicos({ servicos }) {
             </ButtonWrapper>
           </FaixaTextos>
           <FaixaTextos>
-            <PaineisWrapper>
-              <img
-                src="/static/images/servicos/paineis0.png"
-                alt="painéis solares"
-              />
-              <img
-                src="/static/images/servicos/paineis1.png"
-                alt="painéis solares"
-              />
-            </PaineisWrapper>
+            <FormWrapper id="form">
+              <FormularioAgendamento />
+            </FormWrapper>
           </FaixaTextos>
         </FaixaConteudo>
       </Container>

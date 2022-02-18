@@ -1,25 +1,25 @@
-import styled from 'styled-components';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import queryString from 'query-string';
+import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import queryString from "query-string";
 
-import Loader from './Loader';
-import Status from './Status';
-import Select from './Select';
-import Input from './Input';
-import InputMasked from './InputMasked';
-import SelectCidade from './SelectCidade';
-import Datepicker from '../layout/Datepicker';
-import Paragraph from '../ui/tipografia/Paragraph';
+import Loader from "./Loader";
+import Status from "./Status";
+import Select from "./Select";
+import Input from "./Input";
+import InputMasked from "./InputMasked";
+import SelectCidade from "./SelectCidade";
+import Datepicker from "../layout/Datepicker";
+import Paragraph from "../ui/tipografia/Paragraph";
 
 import {
   Form,
   FormFieldWrapper,
   FormButton,
   StatusWrapper,
-} from '../ui/formulario/FormStyles';
+} from "../ui/formulario/FormStyles";
 
-import Icon from '../ui/icons/Icon';
+import Icon from "../ui/icons/Icon";
 
 import {
   formataFeriados,
@@ -30,9 +30,9 @@ import {
   formataDias,
   infosErro,
   formataHoras,
-} from '../../helpers/formulario';
+} from "../../helpers/formulario";
 
-import { format, getDay } from 'date-fns';
+import { format, getDay } from "date-fns";
 
 const FormRow = styled.div`
   display: flex;
@@ -78,16 +78,16 @@ const EtapaWrapper = styled.div`
 `;
 
 const Etapa = styled.p`
-  border: solid 1px ${props => props.theme.client.colors.azul};
+  border: solid 1px ${(props) => props.theme.client.colors.azul};
 
-  background: ${props => props.theme.client.colors.azul};
-  color: ${props => props.theme.client.colors.branco};
+  background: ${(props) => props.theme.client.colors.azul};
+  color: ${(props) => props.theme.client.colors.branco};
   font-size: 1.1rem;
   margin: 1rem 0.2rem;
 
   &.etapa2 {
     background: transparent;
-    color: ${props => props.theme.client.colors.azul};
+    color: ${(props) => props.theme.client.colors.azul};
   }
 
   width: 2rem;
@@ -101,7 +101,7 @@ const Etapa = styled.p`
 
 const ButtonLocalizacao = styled(FormButton)`
   background: transparent;
-  border: solid 2px ${props => props.theme.client.colors.azul};
+  border: solid 2px ${(props) => props.theme.client.colors.azul};
   margin-bottom: 1rem;
   box-shadow: none;
 
@@ -112,7 +112,7 @@ const ButtonLocalizacao = styled(FormButton)`
 
   &:hover {
     svg {
-      fill: ${props => props.theme.client.colors.branco};
+      fill: ${(props) => props.theme.client.colors.branco};
     }
   }
 `;
@@ -141,20 +141,20 @@ export default function FormularioHome({ servicos }) {
   const [etapa, setEtapa] = useState(false);
 
   const [lead, setLead] = useState({
-    estado: '',
-    cidade: '',
-    unidade: '',
-    nome: '',
-    telefone: '',
-    email: '',
-    servico: '',
-    data: '',
-    hora: '',
-    agendamento: '',
+    estado: "",
+    cidade: "",
+    unidade: "",
+    nome: "",
+    telefone: "",
+    email: "",
+    servico: "",
+    data: "",
+    hora: "",
+    agendamento: "",
   });
 
   const [controleForm, setControleForm] = useState({
-    carregando: 'dias',
+    carregando: "dias",
     valido: true,
     enviando: false,
     erro: false,
@@ -183,18 +183,18 @@ export default function FormularioHome({ servicos }) {
     console.log(value);
   };
 
-  const handleData = data => {
-    setLead({ ...lead, ['data']: data });
+  const handleData = (data) => {
+    setLead({ ...lead, ["data"]: data });
 
     const diaSemana = getDay(data) + 1;
     const horarioPreset = horariosPreset.filter(
-      horarioPreset => horarioPreset.semana_dia_id === diaSemana
+      (horarioPreset) => horarioPreset.semana_dia_id === diaSemana
     );
 
     setHorarios(formataHoras(horarioPreset[0].intervalos));
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validacaoHome(lead) || !validaTelefone(lead.telefone)) {
@@ -213,15 +213,15 @@ export default function FormularioHome({ servicos }) {
 
     try {
       const response = await fetch(`${process.env.API_URL}agendamentos`, {
-        method: 'POST',
-        credentials: 'same-origin',
+        method: "POST",
+        credentials: "same-origin",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           cidade_id: lead.cidade,
           unidade_id: lead.unidade,
-          servico_id: lead.servico,
+          servico_id: "Energia Solar",
           nome: lead.nome,
           telefone: lead.telefone,
           email: lead.email,
@@ -253,11 +253,11 @@ export default function FormularioHome({ servicos }) {
           `${process.env.API_URL}locais/unidades/estados`
         );
         const data = await res.json();
-        data.map(uf => {
+        data.map((uf) => {
           uf.nome = uf.id;
           return uf;
         });
-        setControleForm({ ...controleForm, carregando: 'dias' });
+        setControleForm({ ...controleForm, carregando: "dias" });
         setEstados(data);
       } catch (error) {
         setControleForm({
@@ -273,15 +273,15 @@ export default function FormularioHome({ servicos }) {
   }, []);
 
   const handleEstado = async ({ currentTarget: { name, value } }) => {
-    setLead({ ...lead, [name]: value, cidade: '' });
-    setControleForm({ ...controleForm, carregando: 'cidade' });
+    setLead({ ...lead, [name]: value, cidade: "" });
+    setControleForm({ ...controleForm, carregando: "cidade" });
     setCidades([]);
 
     try {
       const res = await fetch(`${process.env.API_URL}locais/cidades/${value}`);
       const data = await res.json();
 
-      setControleForm({ ...controleForm, carregando: 'dias' });
+      setControleForm({ ...controleForm, carregando: "dias" });
       setCidades(data);
     } catch (error) {
       setControleForm({
@@ -294,8 +294,8 @@ export default function FormularioHome({ servicos }) {
   };
 
   const handleCidade = async ({ currentTarget: { name, value } }) => {
-    setLead({ ...lead, [name]: value, unidade: '' });
-    setControleForm({ ...controleForm, carregando: 'unidade' });
+    setLead({ ...lead, [name]: value, unidade: "" });
+    setControleForm({ ...controleForm, carregando: "unidade" });
 
     try {
       const res = await fetch(
@@ -304,13 +304,13 @@ export default function FormularioHome({ servicos }) {
       const data = await res.json();
 
       if (data) {
-        data.map(unidade => {
+        data.map((unidade) => {
           unidade.nome = unidade.bairro;
           return unidade;
         });
       }
       setUnidades(data);
-      setControleForm({ ...controleForm, carregando: 'dias' });
+      setControleForm({ ...controleForm, carregando: "dias" });
     } catch (error) {
       setControleForm({
         ...controleForm,
@@ -326,11 +326,11 @@ export default function FormularioHome({ servicos }) {
       const res = await fetch(`${process.env.API_URL}locais/unidades/estados`);
       const data = await res.json();
 
-      data.map(uf => {
+      data.map((uf) => {
         uf.nome = uf.id;
         return uf;
       });
-      setControleForm({ ...controleForm, carregando: 'dias' });
+      setControleForm({ ...controleForm, carregando: "dias" });
       setEstados(data);
     } catch (error) {
       setControleForm({
@@ -344,9 +344,9 @@ export default function FormularioHome({ servicos }) {
 
   const getLocation = () => {
     if (!navigator.geolocation) {
-      setStatus('Geolocalização não é compatível com seu navegador');
+      setStatus("Geolocalização não é compatível com seu navegador");
     } else {
-      navigator.geolocation.getCurrentPosition(position => {
+      navigator.geolocation.getCurrentPosition((position) => {
         setStatus(null);
         setLat(position.coords.latitude);
         setLng(position.coords.longitude);
@@ -370,7 +370,7 @@ export default function FormularioHome({ servicos }) {
 
   const getUnidadesWithLocation = () => {
     try {
-      getCity().then(async cidade => {
+      getCity().then(async (cidade) => {
         const encCidade = encodeURI(cidade);
         const response = await fetch(
           `${process.env.API_URL}locais/cidades_nome/unidades/${encCidade}`
@@ -391,12 +391,12 @@ export default function FormularioHome({ servicos }) {
     }
   };
 
-  const buscaCidadesPorEstado = async value => {
+  const buscaCidadesPorEstado = async (value) => {
     try {
       const res = await fetch(`${process.env.API_URL}locais/cidades/${value}`);
       const data = await res.json();
 
-      setControleForm({ ...controleForm, carregando: 'dias' });
+      setControleForm({ ...controleForm, carregando: "dias" });
       setCidades(data);
     } catch (error) {
       setControleForm({
@@ -408,7 +408,7 @@ export default function FormularioHome({ servicos }) {
     }
   };
 
-  const buscaUnidadesPorCidade = async value => {
+  const buscaUnidadesPorCidade = async (value) => {
     try {
       const res = await fetch(
         `${process.env.API_URL}locais/cidades/unidades/${value}`
@@ -416,13 +416,13 @@ export default function FormularioHome({ servicos }) {
       const data = await res.json();
 
       if (data) {
-        data.map(unidade => {
+        data.map((unidade) => {
           unidade.nome = unidade.bairro;
           return unidade;
         });
       }
       setUnidades(data);
-      setControleForm({ ...controleForm, carregando: 'dias' });
+      setControleForm({ ...controleForm, carregando: "dias" });
     } catch (error) {
       setControleForm({
         ...controleForm,
@@ -567,15 +567,6 @@ export default function FormularioHome({ servicos }) {
                 tipo="tel"
                 custom={lead.telefone ? validaTelefone(lead.telefone) : true}
               />
-              <SelectHome
-                nome="servico"
-                placeholder="Selecione um serviço"
-                handleInput={handleInput}
-                valor={lead.servico}
-                valores={servicos}
-                valido={controleForm.valido}
-                className="select-input--home select-input--home-etapa2"
-              />
               {/* <DatepickerWrapper>
                 <DatepickerHome
                   feriados={feriados}
@@ -607,8 +598,8 @@ export default function FormularioHome({ servicos }) {
           )}
           <EtapaWrapper>
             {etapa && <span onClick={() => nextStep()}>Voltar</span>}
-            <Etapa className={etapa ? 'etapa2' : ''}>1</Etapa>
-            <Etapa className={!etapa ? 'etapa2' : ''}>2</Etapa>
+            <Etapa className={etapa ? "etapa2" : ""}>1</Etapa>
+            <Etapa className={!etapa ? "etapa2" : ""}>2</Etapa>
           </EtapaWrapper>
         </Form>
       )}

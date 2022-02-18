@@ -214,6 +214,9 @@ const NavbarHome = () => {
         <Link href="/contato" passHref>
           <LinkResponsivo>Contato</LinkResponsivo>
         </Link>
+        <Link href="/expansao" passHref>
+          <LinkResponsivo>Seja um Franqueado</LinkResponsivo>
+        </Link>
       </MenuLinksResponsive>
     </>
   );

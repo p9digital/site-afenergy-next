@@ -141,10 +141,8 @@ const Footer = () => {
                 />
               </LogoContainer>
               <p>
-                A AF Energy presta assessoria financeira, disponibilizando
-                soluções como crédito consignado e diversos tipos de consórcio
-                que possibilitam organizar e alavancar as finanças e promover
-                conquistas.
+                A AF Energy é uma franquia de soluções em energia fotovoltaica.
+                Seja um franqueado AF Energy e tenha segurança no mercado.
               </p>
               <LinkWrapper>
                 <Link href="/" passHref>
@@ -197,7 +195,7 @@ const Footer = () => {
               </FooterLink> */}
               <InfosWrapper>
                 <p>Termos e condições</p>
-                <p>Copyright AF Energy Ldta.</p>
+                <p>Copyright AF 360 Franquias LTDA</p>
                 <p>CNPJ: 17.814.862/0001-50</p>
               </InfosWrapper>
               <RedesWrapper>
@@ -235,7 +233,7 @@ const Footer = () => {
               <br />
               <FooterTitle>CONTATOS</FooterTitle>
               <p>(17) 3212-5929</p>
-              <p>contato@afcredito.com.br</p>
+              <p>contato@afenergy.com.br</p>
               <p>Razão Social: AF 360 Franquias LTDA</p>
             </TextWrapper>
           </Coluna>

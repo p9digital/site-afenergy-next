@@ -86,10 +86,7 @@ export default function Contato() {
       <Head>
         <title>AF Energy</title>
         <meta name="description" key="description" content="AF Energy" />
-        <meta
-          name="keywords"
-          content="af energy, energia solar"
-        />
+        <meta name="keywords" content="af energy, energia solar" />
         <meta property="og:title" key="og:title" content="AF Energy" />
         <meta
           property="og:description"
@@ -126,21 +123,19 @@ export default function Contato() {
                   <strong>Contato</strong>
                 </Paragraph>
                 <Paragraph>Fone: (17) 3212 5929</Paragraph>
-                <Paragraph>contato@afcredito.com.br</Paragraph>
-                {/* <ButtonWrapperContato>
-                  <AnchorContato
-                    fontHoverColor="branco"
-                    href="http://franquiadecreditos.com.br/"
-                    target="_blank"
-                  >
-                    <img src="/static/images/contato/franchise.png" />
-                    <span>
-                      SEJA UM
-                      <br /> FRANQUEADO
-                      <br /> AF CRÉDITO
-                    </span>
-                  </AnchorContato>
-                </ButtonWrapperContato> */}
+                <Paragraph>contato@afenergy.com.br</Paragraph>
+                <ButtonWrapperContato>
+                  <Link href="/expansao">
+                    <AnchorContato fontHoverColor="branco">
+                      <img src="/static/images/contato/franchise.png" />
+                      <span>
+                        SEJA UM
+                        <br /> FRANQUEADO
+                        <br /> AF ENERGY
+                      </span>
+                    </AnchorContato>
+                  </Link>
+                </ButtonWrapperContato>
                 <ButtonWrapperContato>
                   <Link href="/" passHref>
                     <ButtonHome

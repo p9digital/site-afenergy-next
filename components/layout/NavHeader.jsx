@@ -1,11 +1,12 @@
-import styled, { StyledComponent } from 'styled-components';
-import Container from '../ui/containers/Container';
-import Icon from '../ui/icons/Icon';
+import styled, { StyledComponent } from "styled-components";
+import Link from 'next/link';
+import Container from "../ui/containers/Container";
+import Icon from "../ui/icons/Icon";
 
 const FaixaWrapper = styled.div`
   width: 100%;
   height: 4rem;
-  background: ${props => props.theme.client.colors.azul};
+  background: ${(props) => props.theme.client.colors.azul};
   box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
@@ -20,12 +21,12 @@ const FaixaConteudo = styled.div`
   align-items: center;
 
   a {
-    color: ${props => props.theme.client.colors.branco};
+    color: ${(props) => props.theme.client.colors.branco};
   }
 `;
 
 const SideDiv = styled.div`
-  background: ${props => props.theme.client.colors.azulEscuro};
+  background: ${(props) => props.theme.client.colors.azulEscuro};
   position: absolute;
   right: -2rem;
   bottom: 0;
@@ -111,6 +112,11 @@ const NavHeader = () => {
             </a>
           </RedesSociais>
           <SideDiv>
+            <Link href="/expansao">
+              <a>
+                SEJA UM FRANQUEADO
+              </a>
+            </Link>
           </SideDiv>
         </FaixaConteudo>
       </Container>

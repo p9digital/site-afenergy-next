@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
     font-size: 10px;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;

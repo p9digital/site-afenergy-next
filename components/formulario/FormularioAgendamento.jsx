@@ -53,7 +53,7 @@ const FormRow = styled.div`
   }
 `;
 
-export default function FormularioAgendamento({ servico }) {
+export default function FormularioAgendamento() {
   const router = useRouter();
 
   const [diasSemana, setDiasSemana] = useState();
@@ -150,7 +150,7 @@ export default function FormularioAgendamento({ servico }) {
         body: JSON.stringify({
           cidade_id: lead.cidade,
           unidade_id: lead.unidade,
-          servico_id: servico,
+          servico_id: "Energia Solar",
           nome: lead.nome,
           telefone: lead.telefone,
           email: lead.email,
