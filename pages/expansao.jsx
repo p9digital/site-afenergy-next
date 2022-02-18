@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useState } from "react";
 
-import FormularioAgendamento from "../components/formulario/FormularioAgendamento";
+import FormularioExpansao from "../components/formulario/FormularioExpansao";
 import Container from "../components/ui/containers/Container";
 import Paragraph from "../components/ui/tipografia/Paragraph";
 import Title from "../components/ui/tipografia/Title";
@@ -162,7 +162,7 @@ const FormWrapper = styled.div`
   }
 `;
 
-export default function Servicos() {
+export default function Expansao() {
   return (
     <>
       <Head>
@@ -176,58 +176,23 @@ export default function Servicos() {
           content="AF Energy"
         />
       </Head>
-      <Banner background="/static/images/servicos/background.png">
-        Serviços
-      </Banner>
+      <Banner background="/static/images/sobre/background.png">Seja um Franqueado</Banner>
       <Container>
         <FaixaConteudo>
           <FaixaTextos>
             <Title margem="0 0 2rem">
-              INSTALAÇÃO DE PAINÉIS SOLARES EM IMÓVEIS
+              Invista no lucrativo serviço de energia fotovoltaica. Seja
+              franqueado AF Energy e tenha segurança no mercado.
             </Title>
-
-            {beneficiosServicos.map((item, index) => {
-              return (
-                <Paragraph
-                  key={"beneficiosServicos" + index}
-                  margem="0 0 .5rem"
-                >
-                  ● {item}
-                </Paragraph>
-              );
-            })}
-            <PaineisWrapper>
-              <img
-                src="/static/images/servicos/paineis0.png"
-                alt="painéis solares"
-              />
-              <img
-                src="/static/images/servicos/paineis1.png"
-                alt="painéis solares"
-              />
-            </PaineisWrapper>
-            {servicos.map((item, index) => {
-              return (
-                <Paragraph key={"servicos2" + index} margem="0 0 1rem">
-                  <strong>● {item.title}</strong>: {item.text}
-                </Paragraph>
-              );
-            })}
-            <ButtonWrapper>
-              <Link href="#form">
-                <ButtonHome
-                  backColor="buttonPrimario"
-                  backHoverColor="buttonSecundario"
-                  fontHoverColor="buttonPrimario"
-                >
-                  Faça um Orçamento!
-                </ButtonHome>
-              </Link>
-            </ButtonWrapper>
+            <Paragraph margem="0 0 5rem">
+              Ofereça o que há de melhor no segmento de energia solar com sua
+              franquia AF Energy! Preencha o formulário para receber mais
+              informações e entrar em contato conosco.
+            </Paragraph>
           </FaixaTextos>
           <FaixaTextos>
             <FormWrapper id="form">
-              <FormularioAgendamento />
+              <FormularioExpansao />
             </FormWrapper>
           </FaixaTextos>
         </FaixaConteudo>

@@ -103,7 +103,7 @@ const Ondas = styled.img`
   width: 60rem;
 `;
 
-const Faixa2 = ({ servicos }) => {
+const Faixa2 = () => {
   return (
     <Faixa2Wrapper>
       <Container>

@@ -123,7 +123,7 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `;
 
-export default function FormularioHome({ servicos }) {
+export default function FormularioHome() {
   const router = useRouter();
 
   const [lat, setLat] = useState(null);

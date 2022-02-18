@@ -188,11 +188,9 @@ const Footer = () => {
               <Link href="/unidades" passHref>
                 <FooterLink>ENCONTRAR UNIDADE</FooterLink>
               </Link>
-              {/* <FooterLink>
-                <a href="https://franquiadecreditos.com.br/" target="_blank">
-                  SEJA UM FRANQUEADO
-                </a>
-              </FooterLink> */}
+              <Link href="/expansao" passHref>
+                <FooterLink>SEJA UM FRANQUEADO</FooterLink>
+              </Link>
               <InfosWrapper>
                 <p>Termos e condições</p>
                 <p>Copyright AF 360 Franquias LTDA</p>

@@ -195,7 +195,7 @@ const Faixa1 = ({ servicos }) => {
         </TextosContainer>
         <TextosContainer>
           <FormWrapper>
-            <FormularioHome servicos={servicos} />
+            <FormularioHome />
           </FormWrapper>
         </TextosContainer>
       </ColTextos>

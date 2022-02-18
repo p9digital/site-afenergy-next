@@ -31,8 +31,8 @@ export default function Home({ servicos, posts }) {
           content="AF Energy"
         />
       </Head>
-      <Faixa1 servicos={servicos} />
-      <Faixa2 servicos={servicos} />
+      <Faixa1 />
+      <Faixa2 />
       <Faixa3 />
       <Faixa4 />
       <Faixa5 posts={posts} />
@@ -41,14 +41,11 @@ export default function Home({ servicos, posts }) {
 }
 
 export const getStaticProps = async () => {
-  let response = await fetch(process.env.API_URL + "locais/servicos");
-  const servicos = await response.json();
-
-  response = await fetch(process.env.API_URL + "locais/noticias");
+  const response = await fetch(process.env.API_URL + "locais/noticias");
   const posts = await response.json();
 
   return {
-    props: { servicos, posts },
+    props: { posts },
   };
 };
 
