@@ -258,7 +258,7 @@ export default function Unidade({
   const getHorarios = () => {
     //checando se hoje a unidade está aberta
     const found = dias_semana.find(
-      (item) => item.semana_dia_id === hoje.diaSemana
+      (item) => item.semana_dia_id === 2
     );
 
     dias_semana.map((item) => {
@@ -509,7 +509,6 @@ export default function Unidade({
             <Coluna>
               <FormularioAgendamentoUnidade
                 currentUnidade={currentUnidade}
-                servicos={servicos}
               />
             </Coluna>
           </FaixaTextos>
@@ -578,10 +577,7 @@ export const getStaticProps = async (context) => {
   );
   const { feriados, dias_semana } = await response.json();
 
-  response = await fetch(process.env.API_URL + "locais/servicos");
-  const servicos = await response.json();
-
   return {
-    props: { servicos, currentUnidade, feriados, dias_semana },
+    props: { currentUnidade, feriados, dias_semana },
   };
 };

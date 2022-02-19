@@ -52,7 +52,7 @@ const FormRow = styled.div`
   justify-content: space-between;
 `;
 
-export default function FormularioAgendamentoUnidade({ servicos, currentUnidade }) {
+export default function FormularioAgendamentoUnidade({ currentUnidade }) {
   const router = useRouter();
 
   const [diasSemana, setDiasSemana] = useState();
@@ -146,7 +146,7 @@ export default function FormularioAgendamentoUnidade({ servicos, currentUnidade 
         body: JSON.stringify({
           cidade_id: currentUnidade.cidade_id,
           unidade_id: currentUnidade.id,
-          servico_id: lead.servico,
+          servico_id: "Energia Solar",
           nome: lead.nome,
           telefone: lead.telefone,
           email: lead.email,
@@ -236,7 +236,7 @@ export default function FormularioAgendamentoUnidade({ servicos, currentUnidade 
             className="select-input--agendamento"
             tipo="email"
           />
-          <SelectAgendamento
+          {/* <SelectAgendamento
             nome="servico"
             placeholder="Selecione um serviço"
             handleInput={handleInput}
@@ -244,7 +244,7 @@ export default function FormularioAgendamentoUnidade({ servicos, currentUnidade 
             valores={servicos}
             valido={controleForm.valido}
             className="select-input--agendamento"
-          />
+          /> */}
           {/* <Datepicker
             feriados={feriados}
             diasSemana={diasSemana}
