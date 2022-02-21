@@ -197,7 +197,7 @@ const Footer = () => {
                 <p>CNPJ: 17.814.862/0001-50</p>
               </InfosWrapper>
               <RedesWrapper>
-                <a
+                {/* <a
                   href="https://www.facebook.com/afcredito.brasil"
                   target="_blank"
                 >
@@ -208,8 +208,8 @@ const Footer = () => {
                     tamanho="3rem"
                     tipo="svg"
                   />
-                </a>
-                <a href="https://www.instagram.com/afcredito/" target="_blank">
+                </a> */}
+                <a href="https://www.instagram.com/afenergy360/" target="_blank">
                   <Icon
                     className="hover"
                     icon="instagram"

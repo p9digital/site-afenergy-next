@@ -92,7 +92,7 @@ const NavHeader = () => {
       <Container>
         <FaixaConteudo>
           <RedesSociais>
-            <a href="https://www.facebook.com/afcredito.brasil" target="_blank">
+            {/* <a href="https://www.facebook.com/afcredito.brasil" target="_blank">
               <Icon
                 className="hover"
                 icon="facebook"
@@ -100,8 +100,8 @@ const NavHeader = () => {
                 tamanho="2rem"
                 tipo="svg"
               />
-            </a>
-            <a href="https://www.instagram.com/afcredito/" target="_blank">
+            </a> */}
+            <a href="https://www.instagram.com/afenergy360/" target="_blank">
               <Icon
                 className="hover"
                 icon="instagram"
