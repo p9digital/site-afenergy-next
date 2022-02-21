@@ -289,7 +289,16 @@ export default function FormularioAgendamento() {
             className="select-input--agendamento"
             tipo="text"
           />
-          <SelectCidade
+          <Input
+            nome="capital"
+            placeholder="Capital disponível para investimento"
+            handleInput={handleInput}
+            valor={lead.capital}
+            valido
+            className="select-input--agendamento"
+            tipo="text"
+          />
+          {/* <SelectCidade
             nome="capital"
             placeholder="Capital disponível para investimento"
             handleInput={handleInput}
@@ -297,7 +306,7 @@ export default function FormularioAgendamento() {
             valores={capitais}
             valido
             className="select-input--agendamento"
-          />
+          /> */}
           <TextArea
             nome="porque"
             placeholder="Por que você quer ser franqueado?"
