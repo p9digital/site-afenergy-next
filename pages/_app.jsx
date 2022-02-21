@@ -18,7 +18,6 @@ export default class MyApp extends App {
     return (
       <>
         <Head>
-          <meta name="facebook-domain-verification" content="98fd7nh1qrwkhlxg8x5lgutx1yvv9x" />
           <link
             href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
             rel="stylesheet"
