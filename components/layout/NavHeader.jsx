@@ -1,4 +1,4 @@
-import styled, { StyledComponent } from "styled-components";
+import styled from "styled-components";
 import Link from 'next/link';
 import Container from "../ui/containers/Container";
 import Icon from "../ui/icons/Icon";
@@ -86,42 +86,40 @@ const RedesSociais = styled.div`
   }
 `;
 
-const NavHeader = () => {
-  return (
-    <FaixaWrapper>
-      <Container>
-        <FaixaConteudo>
-          <RedesSociais>
-            {/* <a href="https://www.facebook.com/afcredito.brasil" target="_blank">
-              <Icon
-                className="hover"
-                icon="facebook"
-                cor="#fff"
-                tamanho="2rem"
-                tipo="svg"
-              />
-            </a> */}
-            <a href="https://www.instagram.com/afenergy360/" target="_blank">
-              <Icon
-                className="hover"
-                icon="instagram"
-                cor="#fff"
-                tamanho="2rem"
-                tipo="svg"
-              />
+const NavHeader = () => (
+  <FaixaWrapper>
+    <Container>
+      <FaixaConteudo>
+        <RedesSociais>
+          {/* <a href="https://www.facebook.com/afcredito.brasil" target="_blank">
+            <Icon
+              className="hover"
+              icon="facebook"
+              cor="#fff"
+              tamanho="2rem"
+              tipo="svg"
+            />
+          </a> */}
+          <a href="https://www.instagram.com/afenergy360/" target="_blank" rel="noreferrer">
+            <Icon
+              className="hover"
+              icon="instagram"
+              cor="#fff"
+              tamanho="2rem"
+              tipo="svg"
+            />
+          </a>
+        </RedesSociais>
+        <SideDiv>
+          <Link href="/expansao">
+            <a>
+              SEJA UM FRANQUEADO
             </a>
-          </RedesSociais>
-          <SideDiv>
-            <Link href="/expansao">
-              <a>
-                SEJA UM FRANQUEADO
-              </a>
-            </Link>
-          </SideDiv>
-        </FaixaConteudo>
-      </Container>
-    </FaixaWrapper>
-  );
-};
+          </Link>
+        </SideDiv>
+      </FaixaConteudo>
+    </Container>
+  </FaixaWrapper>
+);
 
 export default NavHeader;

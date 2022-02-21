@@ -125,135 +125,134 @@ const FooterP9 = styled.div`
   }
 `;
 
-const LogoAbf = styled.img``;
+// const LogoAbf = styled.img``;
 
-const Footer = () => {
-  return (
-    <FaixaFooter>
-      <Container>
-        <FooterWrapper>
-          <Coluna>
-            <TextWrapper>
-              <LogoContainer>
-                <Logo
-                  src="/static/images/logo_branco.png"
-                  alt="Logo AF Energy"
-                />
-              </LogoContainer>
-              <p>
-                A AF Energy é uma franquia de soluções em energia fotovoltaica.
-                Seja um franqueado AF Energy e tenha segurança no mercado.
-              </p>
-              <LinkWrapper>
-                <Link href="/" passHref>
-                  <AnchorFooter
-                    backColor="buttonSecundario"
-                    backHoverColor="buttonPrimario"
-                    fontColor="azul"
-                    fontHoverColor="branco"
-                  >
-                    Faça um Orçamento!
-                  </AnchorFooter>
-                </Link>
-              </LinkWrapper>
-              {/* <picture>
-                <source
-                  srcSet="/static/images/logo_abf.webp"
-                  type="image/webp"
-                />
-                <LogoAbf src="/static/images/logo_abf.png" alt="Logo ABF" />
-              </picture> */}
-            </TextWrapper>
-          </Coluna>
-          <Coluna>
-            <TextWrapper>
+const Footer = () => (
+  <FaixaFooter>
+    <Container>
+      <FooterWrapper>
+        <Coluna>
+          <TextWrapper>
+            <LogoContainer>
+              <Logo
+                src="/static/images/logo_branco.png"
+                alt="Logo AF Energy"
+              />
+            </LogoContainer>
+            <p>
+              A AF Energy é uma franquia de soluções em energia fotovoltaica.
+              Seja um franqueado AF Energy e tenha segurança no mercado.
+            </p>
+            <LinkWrapper>
               <Link href="/" passHref>
-                <FooterLink>PÁGINA INICIAL</FooterLink>
-              </Link>
-              <Link href="/sobre" passHref>
-                <FooterLink>SOBRE</FooterLink>
-              </Link>
-              <Link href="/servicos" passHref>
-                <FooterLink>SERVIÇOS</FooterLink>
-              </Link>
-              <Link href="/parceiros" passHref>
-                <FooterLink>PARCEIROS</FooterLink>
-              </Link>
-              <Link href="/blog" passHref>
-                <FooterLink>BLOG</FooterLink>
-              </Link>
-              <Link href="/contato" passHref>
-                <FooterLink>CONTATO</FooterLink>
-              </Link>
-              <Link href="/unidades" passHref>
-                <FooterLink>ENCONTRAR UNIDADE</FooterLink>
-              </Link>
-              <Link href="/expansao" passHref>
-                <FooterLink>SEJA UM FRANQUEADO</FooterLink>
-              </Link>
-              <InfosWrapper>
-                <p>Termos e condições</p>
-                <p>Copyright AF 360 Franquias LTDA</p>
-                <p>CNPJ: 17.814.862/0001-50</p>
-              </InfosWrapper>
-              <RedesWrapper>
-                {/* <a
-                  href="https://www.facebook.com/afcredito.brasil"
-                  target="_blank"
+                <AnchorFooter
+                  backColor="buttonSecundario"
+                  backHoverColor="buttonPrimario"
+                  fontColor="azul"
+                  fontHoverColor="branco"
                 >
-                  <Icon
-                    className="hover"
-                    icon="facebook"
-                    cor="#fff"
-                    tamanho="3rem"
-                    tipo="svg"
-                  />
-                </a> */}
-                <a href="https://www.instagram.com/afenergy360/" target="_blank">
-                  <Icon
-                    className="hover"
-                    icon="instagram"
-                    cor="#fff"
-                    tamanho="3rem"
-                    tipo="svg"
-                    margem="0 0 0 1rem"
-                  />
-                </a>
-              </RedesWrapper>
-            </TextWrapper>
-          </Coluna>
-          <Coluna>
-            <TextWrapper>
-              <FooterTitle>SEDE</FooterTitle>
-              <p>Antonio de Godoy 4050, Centro</p>
-              <p>CEP: 15.015-100</p>
-              <p>S. J. do Rio Preto/SP</p>
-              <br />
-              <FooterTitle>CONTATOS</FooterTitle>
-              <p>(17) 3212-5929</p>
-              <p>contato@afenergy.com.br</p>
-              <p>Razão Social: AF 360 Franquias LTDA</p>
-            </TextWrapper>
-          </Coluna>
-        </FooterWrapper>
-        <FooterP9>
-          <p>
-            Com ♥ por{" "}
-            <strong>
-              <a
-                href="https://p9.digital"
-                title="Marketing Digital"
+                  Faça um Orçamento!
+                </AnchorFooter>
+              </Link>
+            </LinkWrapper>
+            {/* <picture>
+              <source
+                srcSet="/static/images/logo_abf.webp"
+                type="image/webp"
+              />
+              <LogoAbf src="/static/images/logo_abf.png" alt="Logo ABF" />
+            </picture> */}
+          </TextWrapper>
+        </Coluna>
+        <Coluna>
+          <TextWrapper>
+            <Link href="/" passHref>
+              <FooterLink>PÁGINA INICIAL</FooterLink>
+            </Link>
+            <Link href="/sobre" passHref>
+              <FooterLink>SOBRE</FooterLink>
+            </Link>
+            <Link href="/servicos" passHref>
+              <FooterLink>SERVIÇOS</FooterLink>
+            </Link>
+            <Link href="/parceiros" passHref>
+              <FooterLink>PARCEIROS</FooterLink>
+            </Link>
+            <Link href="/blog" passHref>
+              <FooterLink>BLOG</FooterLink>
+            </Link>
+            <Link href="/contato" passHref>
+              <FooterLink>CONTATO</FooterLink>
+            </Link>
+            <Link href="/unidades" passHref>
+              <FooterLink>ENCONTRAR UNIDADE</FooterLink>
+            </Link>
+            <Link href="/expansao" passHref>
+              <FooterLink>SEJA UM FRANQUEADO</FooterLink>
+            </Link>
+            <InfosWrapper>
+              <p>Termos e condições</p>
+              <p>Copyright AF 360 Franquias LTDA</p>
+              <p>CNPJ: 17.814.862/0001-50</p>
+            </InfosWrapper>
+            <RedesWrapper>
+              {/* <a
+                href="https://www.facebook.com/afcredito.brasil"
                 target="_blank"
-                rel="noopener noreferrer"
               >
-                P9 Digital
+                <Icon
+                  className="hover"
+                  icon="facebook"
+                  cor="#fff"
+                  tamanho="3rem"
+                  tipo="svg"
+                />
+              </a> */}
+              <a href="https://www.instagram.com/afenergy360/" target="_blank" rel="noreferrer">
+                <Icon
+                  className="hover"
+                  icon="instagram"
+                  cor="#fff"
+                  tamanho="3rem"
+                  tipo="svg"
+                  margem="0 0 0 1rem"
+                />
               </a>
-            </strong>
-          </p>
-        </FooterP9>
-      </Container>
-    </FaixaFooter>
-  );
-};
+            </RedesWrapper>
+          </TextWrapper>
+        </Coluna>
+        <Coluna>
+          <TextWrapper>
+            <FooterTitle>SEDE</FooterTitle>
+            <p>Antonio de Godoy 4050, Centro</p>
+            <p>CEP: 15.015-100</p>
+            <p>S. J. do Rio Preto/SP</p>
+            <br />
+            <FooterTitle>CONTATOS</FooterTitle>
+            <p>(17) 3212-5929</p>
+            <p>contato@afenergy.com.br</p>
+            <p>Razão Social: AF 360 Franquias LTDA</p>
+          </TextWrapper>
+        </Coluna>
+      </FooterWrapper>
+      <FooterP9>
+        <p>
+          Com ♥ por
+          {" "}
+          <strong>
+            <a
+              href="https://p9.digital"
+              title="Marketing Digital"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              P9 Digital
+            </a>
+          </strong>
+        </p>
+      </FooterP9>
+    </Container>
+  </FaixaFooter>
+);
 
 export default Footer;
