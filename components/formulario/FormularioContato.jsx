@@ -131,7 +131,7 @@ export default function FormularioContato() {
             valido={controleForm.valido}
             className="select-input--contato"
             tipo="text"
-            custom={true}
+            custom
           />
           <Input
             nome="email"
@@ -141,7 +141,7 @@ export default function FormularioContato() {
             valido={controleForm.valido}
             className="select-input--contato"
             tipo="text"
-            custom={true}
+            custom
           />
           <Input
             nome="assunto"
@@ -151,7 +151,7 @@ export default function FormularioContato() {
             valido={controleForm.valido}
             className="select-input--contato"
             tipo="text"
-            custom={true}
+            custom
           />
           <TextArea
             nome="mensagem"
@@ -160,7 +160,6 @@ export default function FormularioContato() {
             valor={lead.mensagem}
             valido={controleForm.valido}
             className="text-area text-area--contato"
-            tipo="text"
           />
           <ButtonWrapper>
             <FormButton

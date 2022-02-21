@@ -8,8 +8,7 @@ const TextArea = ({
   handleInput,
   valor,
   valido,
-  className,
-  tipo
+  className
 }) => (
   <TextAreaGroup>
     <textarea
@@ -19,7 +18,6 @@ const TextArea = ({
       onChange={handleInput}
       className={`${className} ${!valido && !valor ? "text-area--erro" : ""}`}
       placeholder={placeholder}
-      type={tipo}
     />
   </TextAreaGroup>
 );
@@ -32,11 +30,9 @@ TextArea.propTypes = {
   placeholder: PropTypes.string.isRequired,
   handleInput: PropTypes.func.isRequired,
   valor: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  valido: PropTypes.bool.isRequired,
-  tipo: PropTypes.string
+  valido: PropTypes.bool.isRequired
 };
 
 TextArea.defaultProps = {
-  tipo: "string",
   className: ""
 };

@@ -1,15 +1,16 @@
+// eslint-disable-next-line linebreak-style
 import Head from "next/head";
 import styled from "styled-components";
-import Link from "next/link";
-import { useState } from "react";
+// import Link from "next/link";
+// import { useState } from "react";
 
 import FormularioExpansao from "../components/formulario/FormularioExpansao";
 import Container from "../components/ui/containers/Container";
 import Paragraph from "../components/ui/tipografia/Paragraph";
 import Title from "../components/ui/tipografia/Title";
 import Banner from "../components/layout/Banner";
-import { ButtonWrapper, ButtonHome } from "../components/conteudo/home/Faixa1";
-import { servicos, beneficiosServicos } from "../helpers/dados";
+import { ButtonWrapper } from "../components/conteudo/home/Faixa1";
+// import { servicos, beneficiosServicos } from "../helpers/dados";
 
 const FaixaConteudo = styled.div`
   width: 100%;
@@ -139,19 +140,19 @@ export const Servico = styled.div`
   }
 `;
 
-const PaineisWrapper = styled.div`
-  margin: 5rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  @media (max-width: 900px) {
-    justify-content: center;
-  }
-  img {
-    width: 100%;
-    max-width: 250px;
-  }
-`;
+// const PaineisWrapper = styled.div`
+//   margin: 5rem 0;
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 2rem;
+//   @media (max-width: 900px) {
+//     justify-content: center;
+//   }
+//   img {
+//     width: 100%;
+//     max-width: 250px;
+//   }
+// `;
 
 const FormWrapper = styled.div`
   width: 100%;

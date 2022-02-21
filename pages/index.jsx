@@ -1,4 +1,5 @@
 import Head from "next/head";
+import PropTypes from 'prop-types';
 
 import Faixa1 from "../components/conteudo/home/Faixa1";
 import Faixa2 from "../components/conteudo/home/Faixa2";
@@ -6,7 +7,7 @@ import Faixa3 from "../components/conteudo/home/Faixa3";
 import Faixa4 from "../components/conteudo/home/Faixa4";
 import Faixa5 from "../components/conteudo/home/Faixa5";
 
-export default function Home({ servicos, posts }) {
+function Home({ posts }) {
   return (
     <>
       <Head>
@@ -41,7 +42,7 @@ export default function Home({ servicos, posts }) {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch(process.env.API_URL + "locais/noticias");
+  const response = await fetch(`${process.env.API_URL}locais/noticias`);
   const posts = await response.json();
 
   return {
@@ -49,4 +50,18 @@ export const getStaticProps = async () => {
   };
 };
 
-//redeploy
+Home.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    titulo: PropTypes.string.required,
+    path: PropTypes.string.required,
+    resumo: PropTypes.string,
+    categoria: PropTypes.string,
+    data_noticia: PropTypes.string,
+  })).isRequired
+};
+
+Home.defaultProp = {
+  posts: []
+};
+
+export default Home;

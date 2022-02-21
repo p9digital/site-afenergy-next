@@ -13,7 +13,7 @@ export const Form = styled.form`
   }
 
   &.form-encontrar {
-    border: solid 1px ${props => props.theme.client.colors.azul};
+    border: solid 1px ${(props) => props.theme.client.colors.azul};
     border-radius: 50px;
 
     padding: 1rem;
@@ -23,7 +23,7 @@ export const Form = styled.form`
   }
 
   &.form-selectencontrar {
-    border: solid 1px ${props => props.theme.client.colors.azul};
+    border: solid 1px ${(props) => props.theme.client.colors.azul};
     border-radius: 10px;
 
     flex-direction: row;
@@ -50,8 +50,8 @@ export const Form = styled.form`
 
     max-width: 40rem;
 
-    box-shadow: ${props => props.theme.boxShadows.stronger};
-    background: ${props => props.theme.client.colors.brancoForm};
+    box-shadow: ${(props) => props.theme.boxShadows.stronger};
+    background: ${(props) => props.theme.client.colors.brancoForm};
 
     @media (max-width: 450px) {
       width: 100%;
@@ -111,7 +111,7 @@ export const StatusContainer = styled.div`
 
 export const StatusWrapper = styled.div`
   background-color: #fff;
-  box-shadow: ${props => props.theme.boxShadows.stronger};
+  box-shadow: ${(props) => props.theme.boxShadows.stronger};
 
   display: flex;
   flex-direction: column;
@@ -128,7 +128,7 @@ export const StatusWrapper = styled.div`
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     strong {
-      color: ${props => props.theme.client.colors.marrom};
+      color: ${(props) => props.theme.client.colors.marrom};
     }
   }
 `;

@@ -1,80 +1,40 @@
-import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 import queryString from "query-string";
+import styled from "styled-components";
 
 import Status from "./Status";
 import Loader from "./Loader";
 import Input from "./Input";
 import InputMasked from "./InputMasked";
-import Select from "./Select";
+import TextArea from "./TextArea";
 import SelectCidade from "./SelectCidade";
-import Datepicker from "../layout/Datepicker";
 import Icon from "../ui/icons/Icon";
 
 import { Form, FormButton, StatusWrapper } from "../ui/formulario/FormStyles";
 import Paragraph from "../ui/tipografia/Paragraph";
 
 import {
-  validacaoHome,
   validaNomeCompleto,
   validaTelefone,
   infosErro,
-  formataDias,
-  formataFeriados,
-  formataHoras,
+  validacaoExpansao
 } from "../../helpers/formulario";
-
-import { format, getDay } from "date-fns";
-
-const SelectAgendamento = styled(SelectCidade)``;
-
-const ButtonWrapper = styled.div`
-  margin-top: 2rem;
-  width: 100%;
-`;
-
-const FormHeader = styled.div`
-  position: relative;
-  width: 100%;
-  margin-bottom: 3rem;
-  text-align: center;
-`;
-
-const FormRow = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  @media (max-width: 450px) {
-    flex-direction: column;
-    justify-content: center;
-  }
-`;
+import { capitais } from "../../helpers/dados";
 
 export default function FormularioAgendamento() {
   const router = useRouter();
-
-  const [diasSemana, setDiasSemana] = useState();
-  const [feriados, setFeriados] = useState();
-  const [horarios, setHorarios] = useState([]);
-  const [horariosPreset, setHorariosPreset] = useState();
-
   const [estados, setEstados] = useState([]);
   const [cidades, setCidades] = useState([]);
-  const [unidades, setUnidades] = useState([]);
-
   const [lead, setLead] = useState({
     nome: "",
-    telefone: "",
     email: "",
-    estado: "",
+    celular: "",
+    uf: "",
     cidade: "",
-    unidade: "",
-    data: "",
-    hora: "",
-    agendamento: "",
+    profissao: "",
+    capital: "",
+    porque: "",
   });
 
   const [controleForm, setControleForm] = useState({
@@ -84,96 +44,6 @@ export default function FormularioAgendamento() {
     erro: false,
     sucesso: false,
   });
-
-  const buscaDias = async (id) => {
-    try {
-      const response = await fetch(
-        `${process.env.API_URL}locais/unidades/dias/${id}`
-      );
-      const data = await response.json();
-
-      setFeriados(formataFeriados(data.feriados));
-      setDiasSemana(formataDias(data.dias_semana));
-      setHorariosPreset(data.dias_semana);
-
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleInput = ({ currentTarget: { name, value } }) => {
-    setLead({ ...lead, [name]: value });
-
-    if (name === "unidade") {
-      buscaDias(value);
-    }
-  };
-
-  const handleData = (data) => {
-    setLead({ ...lead, ["data"]: data });
-
-    const diaSemana = getDay(data) + 1;
-    const horarioPreset = horariosPreset.filter(
-      (horarioPreset) => horarioPreset.semana_dia_id === diaSemana
-    );
-
-    setHorarios(formataHoras(horarioPreset[0].intervalos));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validacaoHome(lead) || !validaTelefone(lead.telefone)) {
-      setControleForm({
-        ...controleForm,
-        valido: false,
-      });
-
-      return false;
-    }
-
-    setControleForm({
-      ...controleForm,
-      enviando: true,
-    });
-
-    const queryParams = queryString.parse(window.location.search);
-
-    try {
-      const response = await fetch(`${process.env.API_URL}agendamentos`, {
-        method: "POST",
-        credentials: "same-origin",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          cidade_id: lead.cidade,
-          unidade_id: lead.unidade,
-          servico_id: "Energia Solar",
-          nome: lead.nome,
-          telefone: lead.telefone,
-          email: lead.email,
-          // agendamento: `${format(lead.data, 'yyyy-MM-dd')} ${lead.hora}`,
-          referrer: document.referrer,
-          ...queryParams,
-        }),
-      });
-
-      setControleForm({
-        ...controleForm,
-        sucesso: true,
-      });
-    } catch (err) {
-      console.log(err);
-      setControleForm({
-        ...controleForm,
-        sucesso: false,
-        enviando: false,
-        erro: true,
-      });
-    }
-  };
 
   useEffect(() => {
     async function getEstados() {
@@ -201,6 +71,10 @@ export default function FormularioAgendamento() {
 
     getEstados();
   }, []);
+
+  const handleInput = ({ currentTarget: { name, value } }) => {
+    setLead({ ...lead, [name]: value });
+  };
 
   const handleEstado = async ({ currentTarget: { name, value } }) => {
     setLead({ ...lead, [name]: value, cidade: "" });
@@ -239,7 +113,6 @@ export default function FormularioAgendamento() {
           return unidade;
         });
       }
-      setUnidades(data);
       setControleForm({ ...controleForm, carregando: "dias" });
     } catch (error) {
       setControleForm({
@@ -249,6 +122,75 @@ export default function FormularioAgendamento() {
         erro: true,
       });
     }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validacaoExpansao(lead) || !validaTelefone(lead.celular)) {
+      setControleForm({
+        ...controleForm,
+        valido: false,
+      });
+
+      return false;
+    }
+
+    setControleForm({
+      ...controleForm,
+      enviando: true,
+    });
+
+    const queryParams = queryString.parse(window.location.search);
+
+    try {
+      const response = await fetch(`${process.env.API_URL}expansao/leads`, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome: lead.nome,
+          email: lead.email,
+          celular: lead.celular,
+          estado_id: lead.uf,
+          cidade_id: lead.cidade,
+          profissao: lead.profissao,
+          capital: lead.capital,
+          porque: lead.porque,
+          referrer: document.referrer,
+          ...queryParams,
+        }),
+      });
+      const result = await response.json();
+
+      if (result.save) {
+        setControleForm({
+          ...controleForm,
+          sucesso: true,
+        });
+
+        router.push("expansao?enviado=true", "expansao/sucesso", { shallow: true });
+      } else {
+        setControleForm({
+          ...controleForm,
+          sucesso: false,
+          enviando: false,
+          erro: true,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+      setControleForm({
+        ...controleForm,
+        sucesso: false,
+        enviando: false,
+        erro: true,
+      });
+    }
+
+    return false;
   };
 
   return (
@@ -280,7 +222,7 @@ export default function FormularioAgendamento() {
         </StatusWrapper>
       )}
       {!controleForm.enviando && !controleForm.erro && !controleForm.sucesso && (
-        <Form onSubmit={false} className="form-agendamento">
+        <Form onSubmit={handleSubmit} className="form-agendamento">
           <FormHeader>
             <Paragraph>
               ABRA SUA FRANQUIA AF ENERGY!
@@ -300,14 +242,14 @@ export default function FormularioAgendamento() {
           />
           <InputMasked
             mask="tel/cel"
-            nome="telefone"
+            nome="celular"
             placeholder="Celular com DDD"
             handleInput={handleInput}
-            valor={lead.telefone}
+            valor={lead.celular}
             valido={controleForm.valido}
             className="select-input--agendamento"
             tipo="tel"
-            custom={lead.telefone ? validaTelefone(lead.telefone) : true}
+            custom={lead.celular ? validaTelefone(lead.celular) : true}
           />
           <Input
             nome="email"
@@ -319,16 +261,16 @@ export default function FormularioAgendamento() {
             tipo="email"
           />
           <FormRow>
-            <SelectAgendamento
-              nome="estado"
+            <SelectCidade
+              nome="uf"
               placeholder="UF"
               handleInput={handleEstado}
-              valor={lead.estado}
+              valor={lead.uf}
               valores={estados}
               valido={controleForm.valido}
               className="select-input--agendamento tiny"
             />
-            <SelectAgendamento
+            <SelectCidade
               nome="cidade"
               placeholder="Agora escolha uma cidade"
               handleInput={handleCidade}
@@ -338,36 +280,33 @@ export default function FormularioAgendamento() {
               className="select-input--agendamento medium"
             />
           </FormRow>
-          {/* <SelectAgendamento
-            nome="unidade"
-            placeholder="Agora escolha a unidade"
+          <Input
+            nome="profissao"
+            placeholder="Profissão"
             handleInput={handleInput}
-            valor={lead.unidade}
-            valores={unidades}
-            valido={controleForm.valido}
+            valor={lead.profissao}
+            valido
             className="select-input--agendamento"
-          /> */}
-          {/* {lead.unidade && (
-            <Datepicker
-              feriados={feriados}
-              diasSemana={diasSemana}
-              handleData={handleData}
-              valor={lead.data}
-              nome="data"
-              className="date-picker-agendamento"
-            />
-          )}
-          {lead.data && (
-            <Select
-              nome="hora"
-              placeholder="Selecione um horário"
-              handleInput={handleInput}
-              valor={lead.hora}
-              valores={horarios}
-              valido={controleForm.valido}
-              className="select-input--agendamento select-input--medium"
-            />
-          )} */}
+            tipo="text"
+          />
+          <SelectCidade
+            nome="capital"
+            placeholder="Capital disponível para investimento"
+            handleInput={handleInput}
+            valor={lead.capital}
+            valores={capitais}
+            valido
+            className="select-input--agendamento"
+          />
+          <TextArea
+            nome="porque"
+            placeholder="Por que você quer ser franqueado?"
+            handleInput={handleInput}
+            valor={lead.porque}
+            valido
+            className="text-area--expansao select-input--agendamento"
+          />
+
           <ButtonWrapper>
             <FormButton
               type="submit"
@@ -384,3 +323,27 @@ export default function FormularioAgendamento() {
     </>
   );
 }
+
+const ButtonWrapper = styled.div`
+  margin-top: 2rem;
+  width: 100%;
+`;
+
+const FormHeader = styled.div`
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+  text-align: center;
+`;
+
+const FormRow = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+`;

@@ -22,10 +22,10 @@ const SelectCidade = ({
         !valido && !valor ? 'select-input--erro' : ''
       }`}
     >
-      <option value="" disabled>
+      <option key="0" value="" disabled>
         {carregando === nome ? 'Carregando...' : placeholder}
       </option>
-      {valores.map(data => (
+      {valores.map((data) => (
         <option key={data.id} value={data.id}>
           {data.nome}
         </option>
@@ -41,7 +41,7 @@ SelectCidade.propTypes = {
   nome: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   handleInput: PropTypes.func.isRequired,
-  valor: PropTypes.string.isRequired,
+  valor: PropTypes.string,
   valores: PropTypes.arrayOf(Object).isRequired,
   valido: PropTypes.bool.isRequired,
   carregando: PropTypes.string,
@@ -49,6 +49,6 @@ SelectCidade.propTypes = {
 
 SelectCidade.defaultProps = {
   className: '',
-  valorPersonalizado: false,
   carregando: '',
+  valor: ""
 };

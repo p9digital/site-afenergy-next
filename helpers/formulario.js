@@ -1,12 +1,11 @@
-/* eslint-disable no-plusplus */
-export const validacaoHome = dados => {
+export const validacaoHome = (dados) => {
   if (
-    !dados.estado ||
-    !dados.cidade ||
-    !dados.unidade ||
-    !dados.nome ||
-    !dados.email ||
-    !dados.telefone
+    !dados.estado
+    || !dados.cidade
+    || !dados.unidade
+    || !dados.nome
+    || !dados.email
+    || !dados.telefone
   ) {
     return false;
   }
@@ -14,41 +13,40 @@ export const validacaoHome = dados => {
   return true;
 };
 
-export const validacaoVeiculos = dados => {
+export const validacaoVeiculos = (dados) => {
   if (
-    !dados.cpf ||
-    !dados.rg ||
-    !dados.nomePai ||
-    !dados.nomeMae ||
-    !dados.naturalidade ||
-    !dados.endereco ||
-    !dados.cep ||
-    !dados.telefoneFixo ||
-    !dados.residenciaPropria ||
-    !dados.tempoMoradia ||
-    !dados.empresa ||
-    !dados.tempoTrabalho ||
-    !dados.profissao ||
-    !dados.registrado ||
-    !dados.enderecoComercial ||
-    !dados.cepComercial ||
-    !dados.telefoneComercial ||
-    !dados.salario ||
-    !dados.telefoneReferencia ||
-    !dados.anoVeiculo ||
-    !dados.modelo ||
-    !dados.preco ||
-    !dados.financiamento ||
-    !dados.tempoFinanciamento
+    !dados.cpf
+    || !dados.rg
+    || !dados.nomePai
+    || !dados.nomeMae
+    || !dados.naturalidade
+    || !dados.endereco
+    || !dados.cep
+    || !dados.telefoneFixo
+    || !dados.residenciaPropria
+    || !dados.tempoMoradia
+    || !dados.empresa
+    || !dados.tempoTrabalho
+    || !dados.profissao
+    || !dados.registrado
+    || !dados.enderecoComercial
+    || !dados.cepComercial
+    || !dados.telefoneComercial
+    || !dados.salario
+    || !dados.telefoneReferencia
+    || !dados.anoVeiculo
+    || !dados.modelo
+    || !dados.preco
+    || !dados.financiamento
+    || !dados.tempoFinanciamento
   ) {
-
     return false;
   }
 
   return true;
 };
 
-export const validacaoEtapa = dados => {
+export const validacaoEtapa = (dados) => {
   if (!dados.estado || !dados.cidade || !dados.unidade) {
     return false;
   }
@@ -56,11 +54,11 @@ export const validacaoEtapa = dados => {
   return true;
 };
 
-export const validacaoAgendamento = dados => {
+export const validacaoAgendamento = (dados) => {
   if (
-    !dados.nome ||
-    !dados.telefone ||
-    !dados.procedimento
+    !dados.nome
+    || !dados.telefone
+    || !dados.procedimento
   ) {
     return false;
   }
@@ -68,12 +66,12 @@ export const validacaoAgendamento = dados => {
   return true;
 };
 
-export const validacaoAgendamentoUnidade = dados => {
+export const validacaoAgendamentoUnidade = (dados) => {
   if (
-    !dados.nome ||
-    !dados.telefone ||
-    !dados.email ||
-    !dados.servico
+    !dados.nome
+    || !dados.telefone
+    || !dados.email
+    || !dados.servico
   ) {
     return false;
   }
@@ -81,7 +79,21 @@ export const validacaoAgendamentoUnidade = dados => {
   return true;
 };
 
-export const validacaoContato = dados => {
+export const validacaoExpansao = (dados) => {
+  if (
+    !dados.nome
+    || !dados.email
+    || !dados.celular
+    || !dados.uf
+    || !dados.cidade
+  ) {
+    return false;
+  }
+
+  return true;
+};
+
+export const validacaoContato = (dados) => {
   if (!dados.nome || !dados.email || !dados.assunto || !dados.mensagem) {
     return false;
   }
@@ -89,13 +101,13 @@ export const validacaoContato = dados => {
   return true;
 };
 
-export const validaNomeCompleto = nome => {
+export const validaNomeCompleto = (nome) => {
   const nomes = nome.trim().split(' ');
   if (
-    nome.length > 0 &&
-    nomes[0].length > 1 &&
-    nomes[1] &&
-    nomes[1].length > 0
+    nome.length > 0
+    && nomes[0].length > 1
+    && nomes[1]
+    && nomes[1].length > 0
   ) {
     return true;
   }
@@ -103,34 +115,27 @@ export const validaNomeCompleto = nome => {
   return false;
 };
 
-export const validaCep = cep => {
+export const validaCep = (cep) => {
   const valido = /(^[0-9]{5})-?([0-9]{3}$)/.test(cep);
 
   return valido;
 };
 
-export const validaCpf = cpf => {
+export const validaCpf = (cpf) => {
   const valido = /(^\d{3}\.\d{3}\.\d{3}\-\d{2}$)/.test(cpf);
 
   return valido;
 };
 
-export const validaRg = rg => {
+export const validaRg = (rg) => {
   const valido = /(^\d{1,2}).?(\d{3}).?(\d{3})-?(\d{1}|X|x$)/.test(rg);
 
   return valido;
 };
 
-export const validaTelefone = telefone => {
-  const valido =
-    /^(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/.test(
-      telefone
-    );
-
-  const valido2 =
-    /^(?:\(?([1-9][0-9])\)?\s?)?(?:((?:[9]?[9][9][9][9]))\-?([9][9][9][9]))$/.test(
-      telefone
-    );
+export const validaTelefone = (telefone) => {
+  const valido = /^(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/.test(telefone);
+  const valido2 = /^(?:\(?([1-9][0-9])\)?\s?)?(?:((?:[9]?[9][9][9][9]))\-?([9][9][9][9]))$/.test(telefone);
 
   return valido && !valido2;
 };
@@ -149,35 +154,31 @@ export const infosSucesso = {
   href: '/',
 };
 
-export const formataDias = dias_semana => {
-  const diasSemanaFormatados = dias_semana.map(dia => {
-    return dia.semana_dia_id;
-  });
+export const formataDias = (dias_semana) => {
+  const diasSemanaFormatados = dias_semana.map((dia) => dia.semana_dia_id);
 
   return diasSemanaFormatados;
 };
 
-export const formataFeriados = feriados => {
-  const feriadosFormatados = feriados.map(dia => {
-    return dia.data.split('-');
-  });
+export const formataFeriados = (feriados) => {
+  const feriadosFormatados = feriados.map((dia) => dia.data.split('-'));
 
   return feriadosFormatados;
 };
 
-export const formataHoras = intervalo => {
-  var horasFormatado = [];
+export const formataHoras = (intervalo) => {
+  const horasFormatado = [];
 
-  //o vue exige um identificador nas iteracoes
+  // o vue exige um identificador nas iteracoes
   let i = 0;
 
-  //comeca no inicio do intervalo -- o split eh um fix porque o safari do ios tem problmeas com data
+  // comeca no inicio do intervalo -- o split eh um fix porque o safari do ios tem problmeas com data
   const intervaloInicioSplit = intervalo.inicio.split(/[- :]/);
 
-  //ultimo valor do intervalo
+  // ultimo valor do intervalo
   const intervaloFimSplit = intervalo.fim.split(/[- :]/);
-  //console.log(intervaloInicioSplit, intervaloFimSplit);
-  let valorTime = new Date(
+  // console.log(intervaloInicioSplit, intervaloFimSplit);
+  const valorTime = new Date(
     '1970',
     '01',
     '01',
@@ -196,7 +197,7 @@ export const formataHoras = intervalo => {
   let dentro = true;
 
   do {
-    //formatando para usar a comparacao hh:mm:ss -- cria um novo horario selecionavel
+    // formatando para usar a comparacao hh:mm:ss -- cria um novo horario selecionavel
     const valorFormatado = [
       valorTime.getHours() < 10
         ? `0${valorTime.getHours()}`
@@ -211,8 +212,8 @@ export const formataHoras = intervalo => {
 
     if (intervalo.inicio_fechado && intervalo.fim_fechado) {
       if (
-        intervalo.inicio_fechado > valorFormatado ||
-        valorFormatado > intervalo.fim_fechado
+        intervalo.inicio_fechado > valorFormatado
+        || valorFormatado > intervalo.fim_fechado
       ) {
         horasFormatado.push(valorFormatado);
       }
@@ -220,13 +221,13 @@ export const formataHoras = intervalo => {
       horasFormatado.push(valorFormatado);
     }
 
-    //se o tempo atual estiver fora do fim do intervalo, para
+    // se o tempo atual estiver fora do fim do intervalo, para
     if (valorFormatado >= intervalo.fim) {
-      //se nao for hoje, beleza, senao compara se o horario eh maior que o horario de agora + offset em horas
+      // se nao for hoje, beleza, senao compara se o horario eh maior que o horario de agora + offset em horas
       dentro = false;
     }
 
-    //aumenta o tempo em minutos ou horas
+    // aumenta o tempo em minutos ou horas
     if (valorTime.getMinutes() < 45) {
       valorTime.setMinutes(valorTime.getMinutes() + 30);
     } else {

@@ -175,3 +175,22 @@ export const estados = [
 ];
 
 export const unidades = ["unidade1", "unidade2", "unidade3"];
+
+export const capitais = [
+  {
+    id: "Capital 1",
+    nome: "Capital 1"
+  },
+  {
+    id: "Capital 2",
+    nome: "Capital 2"
+  },
+  {
+    id: "Capital 3",
+    nome: "Capital 3"
+  },
+  {
+    id: "Capital 4",
+    nome: "Capital 4"
+  },
+];

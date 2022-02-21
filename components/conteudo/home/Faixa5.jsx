@@ -1,19 +1,16 @@
-import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { format } from 'date-fns';
+import pt from 'date-fns/locale/pt-BR';
 
 import Container from '../../ui/containers/Container';
 
-import Icon from '../../ui/icons/Icon';
-import Title from '../../ui/tipografia/Title';
 import Paragraph from '../../ui/tipografia/Paragraph';
-import { format } from 'date-fns';
-import pt from 'date-fns/locale/pt-BR';
 
 import {
   FaixaWrapperSimples,
   FaixaTextos,
-  ButtonWrapper,
-  ButtonHome,
 } from './Faixa1';
 
 const FaixaWrapper5 = styled(FaixaWrapperSimples)`
@@ -57,8 +54,8 @@ const Post = styled.div`
   }
 
   span {
-    background: ${props => props.theme.client.colors.azul};
-    color: ${props => props.theme.client.colors.branco};
+    background: ${(props) => props.theme.client.colors.azul};
+    color: ${(props) => props.theme.client.colors.branco};
     border-radius: 10px;
 
     position: absolute;
@@ -83,7 +80,7 @@ const Post = styled.div`
   h1 {
     font-weight: 800;
     font-size: 1.6rem;
-    color: ${props => props.theme.client.colors.azul};
+    color: ${(props) => props.theme.client.colors.azul};
     margin-bottom: 1rem;
   }
   p {
@@ -103,7 +100,7 @@ const Post = styled.div`
 `;
 
 const Faixa5 = ({ posts }) => {
-  const formatDataPost = data => {
+  const formatDataPost = (data) => {
     let dataPost = new Date(data);
     dataPost = format(dataPost, 'dd MMM', { locale: pt }).toUpperCase();
 
@@ -117,23 +114,21 @@ const Faixa5 = ({ posts }) => {
             <strong>Informações Úteis</strong>
           </Paragraph>
           <PostsWrapper>
-            {posts.slice(0, 3).map((item, index) => {
-              return (
-                <Link href={`posts/${item.path}`} key={index}>
-                  <Post>
-                    <img
-                      src="/static/images/home/post0.png"
-                      alt={item.titulo}
-                    />
-                    <span>{formatDataPost(item.data_noticia)}</span>
-                    <h2>{item.categoria}</h2>
-                    <h1>{item.titulo}</h1>
-                    <p>{item.resumo}</p>
-                    <a>Saiba mais</a>
-                  </Post>
-                </Link>
-              );
-            })}
+            {posts.slice(0, 3).map((item, index) => (
+              <Link href={`posts/${item.path}`} key={index}>
+                <Post>
+                  <img
+                    src="/static/images/home/post0.png"
+                    alt={item.titulo}
+                  />
+                  <span>{formatDataPost(item.data_noticia)}</span>
+                  <h2>{item.categoria}</h2>
+                  <h1>{item.titulo}</h1>
+                  <p>{item.resumo}</p>
+                  <a>Saiba mais</a>
+                </Post>
+              </Link>
+            ))}
           </PostsWrapper>
 
           {/* <Paragraph>
@@ -154,6 +149,20 @@ const Faixa5 = ({ posts }) => {
       </Container>
     </FaixaWrapper5>
   );
+};
+
+Faixa5.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    titulo: PropTypes.string.required,
+    path: PropTypes.string.required,
+    resumo: PropTypes.string,
+    categoria: PropTypes.string,
+    data_noticia: PropTypes.string,
+  })).isRequired
+};
+
+Faixa5.defaultProp = {
+  posts: []
 };
 
 export default Faixa5;

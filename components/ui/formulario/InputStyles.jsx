@@ -54,24 +54,24 @@ export const InputGroup = styled.div`
 
     &--home {
       background-color: transparent;
-      border: 2px solid ${props => props.theme.client.colors.azul};
+      border: 2px solid ${(props) => props.theme.client.colors.azul};
       border-radius: 10px;
-      color: ${props => props.theme.client.colors.azul};
+      color: ${(props) => props.theme.client.colors.azul};
 
       ::placeholder {
-        color: ${props => props.theme.client.colors.azul};
+        color: ${(props) => props.theme.client.colors.azul};
       }
     }
     &--veiculos {
       background-color: transparent;
-      color: ${props => props.theme.client.colors.azul};
-      border: 2px solid ${props => props.theme.client.colors.azul};
+      color: ${(props) => props.theme.client.colors.azul};
+      border: 2px solid ${(props) => props.theme.client.colors.azul};
       border-radius: 10px;
 
       margin-bottom: 1rem;
 
       ::placeholder {
-        color: ${props => props.theme.client.colors.azul};
+        color: ${(props) => props.theme.client.colors.azul};
       }
 
       @media (max-width: 500px) {
@@ -85,16 +85,16 @@ export const InputGroup = styled.div`
       margin-bottom: 1rem;
     }
     &--uf-home {
-      background-color: ${props => props.theme.client.colors.azul};
-      border: 2px solid ${props => props.theme.client.colors.branco};
+      background-color: ${(props) => props.theme.client.colors.azul};
+      border: 2px solid ${(props) => props.theme.client.colors.branco};
       border-radius: 10px;
-      color: ${props => props.theme.client.colors.branco};
+      color: ${(props) => props.theme.client.colors.branco};
     }
     &--contato {
       background-color: transparent;
       border-radius: 15px;
-      border: 0.5px solid ${props => props.theme.client.colors.azul};
-      color: ${props => props.theme.client.colors.azul};
+      border: 0.5px solid ${(props) => props.theme.client.colors.azul};
+      color: ${(props) => props.theme.client.colors.azul};
 
       width: 100%;
       margin-bottom: 1rem;
@@ -107,7 +107,7 @@ export const InputGroup = styled.div`
     &--encontrar {
       background-color: transparent;
       border-radius: 0;
-      color: ${props => props.theme.client.colors.azul};
+      color: ${(props) => props.theme.client.colors.azul};
 
       width: 100%;
       padding: 0;
@@ -120,7 +120,7 @@ export const InputGroup = styled.div`
     &--agendamento {
       background-color: #fff;
       border-radius: 10px;
-      color: ${props => props.theme.client.colors.azul};
+      color: ${(props) => props.theme.client.colors.azul};
 
       width: 100%;
       min-width: 36rem;
@@ -185,7 +185,7 @@ export const InputGroup = styled.div`
     }
 
     &--cinza {
-      border: 0.5px solid ${props => props.theme.colors.lightGrey};
+      border: 0.5px solid ${(props) => props.theme.colors.lightGrey};
     }
 
     &--erro {
@@ -203,13 +203,25 @@ export const InputGroup = styled.div`
     &--contato {
       background-color: transparent;
       border-radius: 15px;
-      border: 0.5px solid ${props => props.theme.client.colors.azul};
-      color: ${props => props.theme.client.colors.azul};
+      border: 0.5px solid ${(props) => props.theme.client.colors.azul};
+      color: ${(props) => props.theme.client.colors.azul};
 
       min-width: 40rem;
 
       @media (max-width: 400px) {
         min-width: 32rem;
+      }
+    }
+    &--expansao {
+      width: 90%;
+      border: none;
+      border-radius: 10px;
+      background-color: #fff;
+      height: 10.5rem;
+      padding: 1rem;
+
+      :disabled {
+        cursor: not-allowed;
       }
     }
   }
