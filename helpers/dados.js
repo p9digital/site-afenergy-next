@@ -47,100 +47,20 @@ export const simOuNao = ["Sim", "Não"];
 
 export const parceiros = [
   {
-    title: "Sabemi",
-    img: "sabemi",
-  },
-  {
-    title: "Cetelem",
-    img: "cetelem",
-  },
-  {
-    title: "Crefaz",
-    img: "crefaz",
-  },
-  {
-    title: "Olé Consignado",
-    img: "ole",
-  },
-  {
     title: "BV Financeira",
     img: "bv",
   },
   {
-    title: "Banrisul",
-    img: "banrisul",
+    title: "Intelbras",
+    img: "intelbras",
   },
   {
-    title: "Portocred Financeira",
-    img: "portocred",
+    title: "WEG",
+    img: "weg",
   },
   {
-    title: "Banco Daycoval",
-    img: "daycoval",
-  },
-  {
-    title: "Porto Seguro",
-    img: "porto_seguro",
-  },
-  {
-    title: "Mercantil do Brasil",
-    img: "mercantil",
-  },
-  {
-    title: "Banco Pan",
-    img: "banco_pan",
-  },
-  {
-    title: "Novi Soluções Financeiras",
-    img: "novi",
-  },
-  {
-    title: "Icatu Seguros",
-    img: "icatu",
-  },
-  {
-    title: "Creditas",
-    img: "creditas",
-  },
-  {
-    title: "Crefisa",
-    img: "crefisa",
-  },
-  {
-    title: "Banco BMG",
-    img: "bmg",
-  },
-  {
-    title: "Bradesco Promotora",
-    img: "bradesco",
-  },
-  {
-    title: "Barigui Energy Inteligente",
-    img: "barigui",
-  },
-  {
-    title: "Santander",
-    img: "santander",
-  },
-  {
-    title: "JB Cred",
-    img: "jb",
-  },
-  {
-    title: "Banco do Brasil",
-    img: "banco_brasil",
-  },
-  {
-    title: "Itaú",
-    img: "itau",
-  },
-  {
-    title: "Paapi.",
-    img: "paapi",
-  },
-  {
-    title: "Banco Safra",
-    img: "safra",
+    title: "Growatt",
+    img: "growatt",
   },
 ];
 

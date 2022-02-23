@@ -8,24 +8,25 @@ import { parceiros } from "../helpers/dados";
 
 const FaixaConteudo = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   padding: 4rem 0;
 `;
 
 const FaixaTextos = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
   padding: 2rem;
+  width: 100%;
 `;
 
 const Parceiro = styled.img`
-  width: 100px;
+  max-width: 100px;
   margin: 4rem;
+`;
+
+const ButtonWrapperParceiros = styled(ButtonWrapper)`
+  margin:auto;
 `;
 
 export default function Parceiros() {
@@ -51,29 +52,26 @@ export default function Parceiros() {
       <Container>
         <FaixaConteudo>
           <FaixaTextos>
-            {parceiros.map((item, index) => {
-              return (
-                <>
-                  <Parceiro
-                    src={`/static/images/parceiros/${item.img}.png`}
-                    alt={item.title}
-                    key={"parceiro" + index}
-                  />
-                </>
-              );
-            })}
-            <ButtonWrapper>
-              <Link href="/servicos" passHref>
-                <ButtonHome
-                  backColor="buttonPrimario"
-                  backHoverColor="buttonSecundario"
-                  fontHoverColor="buttonPrimario"
-                >
-                  TODOS OS SERVIÇOS +
-                </ButtonHome>
-              </Link>
-            </ButtonWrapper>
+            {parceiros.map((item, index) => (
+              <Parceiro
+                src={`/static/images/parceiros/${item.img}.png`}
+                alt={item.title}
+                key={`parceiro${index}`}
+              />
+            ))}
           </FaixaTextos>
+
+          <ButtonWrapperParceiros>
+            <Link href="/servicos" passHref>
+              <ButtonHome
+                backColor="buttonPrimario"
+                backHoverColor="buttonSecundario"
+                fontHoverColor="buttonPrimario"
+              >
+                TODOS OS SERVIÇOS +
+              </ButtonHome>
+            </Link>
+          </ButtonWrapperParceiros>
         </FaixaConteudo>
       </Container>
     </>
