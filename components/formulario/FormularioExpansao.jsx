@@ -49,7 +49,7 @@ export default function FormularioAgendamento() {
     async function getEstados() {
       try {
         const res = await fetch(
-          `${process.env.API_URL}locais/unidades/estados`
+          `${process.env.API_URL}locais/estados`
         );
         const data = await res.json();
         data.map((uf) => {
@@ -82,7 +82,7 @@ export default function FormularioAgendamento() {
     setCidades([]);
 
     try {
-      const res = await fetch(`${process.env.API_URL}locais/cidades/${value}`);
+      const res = await fetch(`${process.env.API_URL}locais/cidades/todas/${value}`);
       const data = await res.json();
 
       setControleForm({ ...controleForm, carregando: "dias" });
@@ -99,29 +99,7 @@ export default function FormularioAgendamento() {
 
   const handleCidade = async ({ currentTarget: { name, value } }) => {
     setLead({ ...lead, [name]: value, unidade: "" });
-    setControleForm({ ...controleForm, carregando: "unidade" });
-
-    try {
-      const res = await fetch(
-        `${process.env.API_URL}locais/cidades/unidades/${value}`
-      );
-      const data = await res.json();
-
-      if (data) {
-        data.map((unidade) => {
-          unidade.nome = unidade.bairro;
-          return unidade;
-        });
-      }
-      setControleForm({ ...controleForm, carregando: "dias" });
-    } catch (error) {
-      setControleForm({
-        ...controleForm,
-        sucesso: false,
-        enviando: false,
-        erro: true,
-      });
-    }
+    setControleForm({ ...controleForm });
   };
 
   const handleSubmit = async (e) => {
