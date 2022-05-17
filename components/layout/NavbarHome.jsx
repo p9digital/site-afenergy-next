@@ -214,7 +214,8 @@ const NavbarHome = () => {
         <Link href="/contato" passHref>
           <LinkResponsivo>Contato</LinkResponsivo>
         </Link>
-        <Link href="/expansao" passHref>
+        {/* <Link href="/expansao" passHref> */}
+        <Link href="http://franquia.afenergy.com.br/" passHref>
           <LinkResponsivo>Seja um Franqueado</LinkResponsivo>
         </Link>
       </MenuLinksResponsive>

@@ -125,7 +125,8 @@ export default function Contato() {
                 <Paragraph>Fone: (17) 3212 5929</Paragraph>
                 <Paragraph>contato@afenergy.com.br</Paragraph>
                 <ButtonWrapperContato>
-                  <Link href="/expansao">
+                  {/* <Link href="/expansao"> */}
+                  <Link href="http://franquia.afenergy.com.br/">
                     <AnchorContato fontHoverColor="branco">
                       <img src="/static/images/contato/franchise.png" />
                       <span>

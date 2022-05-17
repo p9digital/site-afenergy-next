@@ -111,7 +111,8 @@ const NavHeader = () => (
           </a>
         </RedesSociais>
         <SideDiv>
-          <Link href="/expansao">
+          {/* <Link href="/expansao"> */}
+          <Link href="http://franquia.afenergy.com.br/">
             <a>
               SEJA UM FRANQUEADO
             </a>

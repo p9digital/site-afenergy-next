@@ -187,7 +187,8 @@ const Footer = () => (
             <Link href="/unidades" passHref>
               <FooterLink>ENCONTRAR UNIDADE</FooterLink>
             </Link>
-            <Link href="/expansao" passHref>
+            {/* <Link href="/expansao" passHref> */}
+            <Link href="http://franquia.afenergy.com.br/" passHref>
               <FooterLink>SEJA UM FRANQUEADO</FooterLink>
             </Link>
             <InfosWrapper>
