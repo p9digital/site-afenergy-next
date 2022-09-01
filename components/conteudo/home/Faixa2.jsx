@@ -1,19 +1,20 @@
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
 import Container from "../../ui/containers/Container";
-import Icon from "../../ui/icons/Icon";
-import Title from "../../ui/tipografia/Title";
-import Paragraph from "../../ui/tipografia/Paragraph";
+import ElasticCarousel from "../../layout/ElasticCarousel";
+// import Icon from "../../ui/icons/Icon";
+// import Title from "../../ui/tipografia/Title";
+// import Paragraph from "../../ui/tipografia/Paragraph";
 
 import {
   FaixaWrapperSimples,
   FaixaTextos,
-  TextosWrapper,
+  // TextosWrapper,
   ButtonWrapper,
   ButtonHome,
 } from "./Faixa1";
 
-import { beneficios } from "../../../helpers/dados";
+import { beneficios, ofertas } from "../../../helpers/dados";
 
 const Faixa2Wrapper = styled(FaixaWrapperSimples)`
   background: url("/static/images/home/faixa2-detalhe.png") no-repeat 20% center;
@@ -49,18 +50,18 @@ const Seta = styled.img`
   width: 6rem;
 `;
 
-const ServicoConteudo = styled.div`
-  display: none;
-  color: ${(props) => props.theme.client.colors.azul};
-  font-size: 1.6rem;
+// const ServicoConteudo = styled.div`
+//   display: none;
+//   color: ${(props) => props.theme.client.colors.azul};
+//   font-size: 1.6rem;
 
-  a {
-    width: fit-content;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
+//   a {
+//     width: fit-content;
+//     &:hover {
+//       text-decoration: underline;
+//     }
+//   }
+// `;
 
 const BeneficiosWrapper = styled.div`
   width: 100%;
@@ -72,7 +73,7 @@ const BeneficiosWrapper = styled.div`
 
 const Beneficio = styled.div`
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.09);
-  background:  ${(props) => props.theme.client.colors.azul};
+  background: ${(props) => props.theme.client.colors.azul};
   position: relative;
 
   border-radius: 10px;
@@ -95,15 +96,35 @@ const Beneficio = styled.div`
   }
 `;
 
-const Ondas = styled.img`
-  position: absolute;
-  top: 0;
-  left: 10%;
-  z-index: -1;
-  width: 60rem;
+// const Ondas = styled.img`
+//   position: absolute;
+//   top: 0;
+//   left: 10%;
+//   z-index: -1;
+//   width: 60rem;
+// `;
+
+const OfertasContainer = styled.div`
+  width: 100%;
+  margin-bottom: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const OfertaWrapper = styled.div`
+  width: min(100%, 350px);
+  padding: 0 5px;
 `;
 
 const Faixa2 = () => {
+  const breakPoints = [
+    { width: 200, itemsToShow: 1 },
+    { width: 600, itemsToShow: 2 },
+    { width: 900, itemsToShow: 3 },
+  ];
+
   return (
     <Faixa2Wrapper>
       <Container>
@@ -115,23 +136,34 @@ const Faixa2 = () => {
             Disponibilizamos para você diversas soluções que irão atender às
             suas necessidades de acordo com seus objetivos:
           </Paragraph> */}
+
+          <OfertasContainer>
+            <ElasticCarousel breakPoints={breakPoints}>
+              {ofertas.map((item, index) => (
+                <OfertaWrapper key={`oferta${index}`}>
+                  <img
+                    src={`/static/images/carrossel/oferta${index}.jpeg`}
+                    alt={item}
+                  />
+                </OfertaWrapper>
+              ))}
+            </ElasticCarousel>
+          </OfertasContainer>
+
           <BeneficiosWrapper>
-            {beneficios.map((item, index) => {
-              return (
-                <Beneficio
-                  key={index}
-                >
-                  <Tag>
-                    <img
-                      src={`/static/images/home/icones/beneficio${index}.png`}
-                      className="default"
-                    />
-                  </Tag>
-                  <h2>{item}</h2>
-                  <Seta src="/static/images/servicos/seta_esquerda.png" />
-                </Beneficio>
-              );
-            })}
+            {beneficios.map((item, index) => (
+              <Beneficio key={index}>
+                <Tag>
+                  <img
+                    src={`/static/images/home/icones/beneficio${index}.png`}
+                    className="default"
+                    alt=""
+                  />
+                </Tag>
+                <h2>{item}</h2>
+                <Seta src="/static/images/servicos/seta_esquerda.png" />
+              </Beneficio>
+            ))}
           </BeneficiosWrapper>
           <ButtonWrapper>
             <Link href="/" passHref>

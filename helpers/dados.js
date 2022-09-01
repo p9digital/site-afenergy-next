@@ -24,6 +24,13 @@ export const vantagens = [
   "Energia limpa de forma sustentável e eficiente",
 ];
 
+export const ofertas = [
+  "[Mês dos pais - Condições Especiais] Kit 6,6kWp de R$ 30.690,00 por R$ 26.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Mês dos pais - Condições Especiais] Kit 8,9kWp de R$ 38.990,00 por R$ 35.790,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Mês dos pais - Condições Especiais] Kit 13,4kWp de R$ 61.590,00 por R$ 56.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Mês dos pais - Condições Especiais] Kit 2kWp de R$ 11.790,00 por R$ 9.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+];
+
 export const servicos = [
   {
     title: "CONFIANÇA",
@@ -99,18 +106,18 @@ export const unidades = ["unidade1", "unidade2", "unidade3"];
 export const capitais = [
   {
     id: "Capital 1",
-    nome: "Capital 1"
+    nome: "Capital 1",
   },
   {
     id: "Capital 2",
-    nome: "Capital 2"
+    nome: "Capital 2",
   },
   {
     id: "Capital 3",
-    nome: "Capital 3"
+    nome: "Capital 3",
   },
   {
     id: "Capital 4",
-    nome: "Capital 4"
+    nome: "Capital 4",
   },
 ];
