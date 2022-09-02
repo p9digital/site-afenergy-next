@@ -25,10 +25,11 @@ export const vantagens = [
 ];
 
 export const ofertas = [
-  "[Mês dos pais - Condições Especiais] Kit 6,6kWp de R$ 30.690,00 por R$ 26.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
-  "[Mês dos pais - Condições Especiais] Kit 8,9kWp de R$ 38.990,00 por R$ 35.790,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
-  "[Mês dos pais - Condições Especiais] Kit 13,4kWp de R$ 61.590,00 por R$ 56.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
-  "[Mês dos pais - Condições Especiais] Kit 2kWp de R$ 11.790,00 por R$ 9.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Mês dos pais - Condições Especiais] Kit 6,3kWp de R$ 31.990,00 por R$ 25.290,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Mês dos pais - Condições Especiais] Kit 8,10kWp de R$ 36.990,00 por R$ 31.890,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Mês dos pais - Condições Especiais] Kit 5,4kWp de R$ 28.590,00 por R$ 22.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Mês dos pais - Condições Especiais] Kit 2,04kWp de R$ 15.290,00 por R$ 11.490,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Mês dos pais - Condições Especiais] Kit 4,05kWp de R$ 23.190,00 por R$ 17.190,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
 ];
 
 export const servicos = [
