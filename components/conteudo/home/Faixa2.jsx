@@ -142,7 +142,7 @@ const Faixa2 = () => {
               {ofertas.map((item, index) => (
                 <OfertaWrapper key={`oferta${index}`}>
                   <img
-                    src={`/static/images/carrossel/oferta${index}.jpeg`}
+                    src={`/static/images/carrossel/oferta${index + 1}.jpeg`}
                     alt={item}
                   />
                 </OfertaWrapper>

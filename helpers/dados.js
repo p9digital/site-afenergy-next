@@ -25,11 +25,20 @@ export const vantagens = [
 ];
 
 export const ofertas = [
-  "[Mês dos pais - Condições Especiais] Kit 6,3kWp de R$ 31.990,00 por R$ 25.290,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
-  "[Mês dos pais - Condições Especiais] Kit 8,10kWp de R$ 36.990,00 por R$ 31.890,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
-  "[Mês dos pais - Condições Especiais] Kit 5,4kWp de R$ 28.590,00 por R$ 22.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
-  "[Mês dos pais - Condições Especiais] Kit 2,04kWp de R$ 15.290,00 por R$ 11.490,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
-  "[Mês dos pais - Condições Especiais] Kit 4,05kWp de R$ 23.190,00 por R$ 17.190,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  // "[Mês dos pais - Condições Especiais] Kit 6,3kWp de R$ 31.990,00 por R$ 25.290,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  // "[Mês dos pais - Condições Especiais] Kit 8,10kWp de R$ 36.990,00 por R$ 31.890,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  // "[Mês dos pais - Condições Especiais] Kit 5,4kWp de R$ 28.590,00 por R$ 22.990,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  // "[Mês dos pais - Condições Especiais] Kit 2,04kWp de R$ 15.290,00 por R$ 11.490,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  // "[Mês dos pais - Condições Especiais] Kit 4,05kWp de R$ 23.190,00 por R$ 17.190,00 | Você ganha 1 ano de seguro do seus sitema! Parcelamento em até 120x",
+  "[Natal Iluminado] Kit 2.04 kWp R$ 11.990,00 | 4 placas de 510w 252 kwh de geração de energia - Homologação Grátis",
+  "[Natal Iluminado] Kit 2.55 kWp R$ 13.890,00 | 5 placas de 510w 315 kwh de geração de energia - Homologação Grátis",
+  "[Natal Iluminado] Kit 3.06 kWp R$ 15.290,00 | 6 placas de 510w 378 kwh de geração de energia - Homologação Grátis",
+  "[Natal Iluminado] Kit 3.57 kWp R$ 17.890,00 | 7 placas de 510w 441 kwh de geração de energia - Homologação Grátis",
+  "[Natal Iluminado] Kit 4.08 kWp R$ 19.450,00 | 8 placas de 510w 504 kwh de geração de energia - Homologação Grátis",
+  "[Natal Iluminado] Kit 4.59 kWp R$ 20.990,00 | 9 placas de 510w 567 kwh de geração de energia - Homologação Grátis",
+  "[Natal Iluminado] Kit 5.01 kWp R$ 23.890,00 | 10 placas de 510w 630 kwh de geração de energia - Homologação Grátis",
+  "[Natal Iluminado] Kit 5.61 kWp R$ 25.290,00 | 11 placas de 510w 693 kwh de geração de energia - Homologação Grátis",
+  "[Natal Iluminado] Kit 6.12 kWp R$ 26.690,00 | 12 placas de 510w 756 kwh de geração de energia - Homologação Grátis",
 ];
 
 export const servicos = [
