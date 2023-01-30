@@ -71,7 +71,7 @@ export const validacaoAgendamentoUnidade = (dados) => {
     !dados.nome
     || !dados.telefone
     || !dados.email
-    || !dados.servico
+    // || !dados.servico
   ) {
     return false;
   }
